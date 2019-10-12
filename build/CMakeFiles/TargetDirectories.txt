@@ -1,0 +1,4 @@
+/home/usrc/hdd/mjpeg_maker/build/CMakeFiles/edit_cache.dir
+/home/usrc/hdd/mjpeg_maker/build/CMakeFiles/rebuild_cache.dir
+/home/usrc/hdd/mjpeg_maker/build/CMakeFiles/server.dir
+/home/usrc/hdd/mjpeg_maker/build/CMakeFiles/compress.dir

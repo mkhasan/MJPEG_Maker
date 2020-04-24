@@ -127,8 +127,6 @@ string.h
 -
 utils.h
 /home/hasan/hdd/mjpeg_maker/src/utils.h
-config.h
-/home/hasan/hdd/mjpeg_maker/src/config.h
 
 /home/hasan/hdd/mjpeg_maker/src/jpeg_writer.h
 stdlib.h

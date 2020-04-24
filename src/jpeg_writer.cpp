@@ -46,7 +46,8 @@ void JPEG_Writer::write_JPEG_file(char * data, AVFrame * curFrame, int quality) 
 
 */
 
-#include "config.h"
+//#include "config.h"
+
 
 void
 JPEG_Writer::write_JPEG_file(unsigned char * dest, unsigned char * src, int stride, int quality)
@@ -106,6 +107,11 @@ JPEG_Writer::write_JPEG_file(unsigned char * dest, unsigned char * src, int stri
 
 	jpeg_finish_compress(&cinfo);
 	/* After finish_compress, we can close the output file. */
+
+	fseek(outfile,0,SEEK_END);
+	size = ftell(outfile);
+
+	printf("size is %d \n", size);
 	fclose(outfile);
 
 

@@ -225,6 +225,7 @@ char * CStreamer::GetData(int & payloadLen)
 
 	int imageLen = GetImageLength(data);
 
+	printf("image len is %d \n", imageLen);
 	//if(imageLen > 0) {
 		//WriteIntoFile(data, imageLen);
 	//}

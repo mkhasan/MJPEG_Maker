@@ -62,7 +62,6 @@ CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: /usr/local/include/libswscale/
 CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o: ../src/image_writer.cpp
 CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o: ../src/image_writer.h
 
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: ../src/config.h
 CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: ../src/image_writer.h
 CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: ../src/jpeg_writer.cpp
 CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: ../src/jpeg_writer.h

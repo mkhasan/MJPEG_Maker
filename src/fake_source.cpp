@@ -226,16 +226,17 @@ void * FakeSource::stream_generator(void * arg) {
 	return NULL;
 }
 
-static JSAMPLE * image_buffer;	/* Points to large array of R,G,B-order data */
-static int image_height;	/* Number of rows in image */
-static int image_width;		/* Number of columns in image */
+JSAMPLE * image_buffer;	/* Points to large array of R,G,B-order data */
+int image_height;	/* Number of rows in image */
+int image_width;		/* Number of columns in image */
 
-static AVFrame *curFrame;
+AVFrame *curFrame;
 
 void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data) {
   FILE *pFile;
   char szFilename[32];
   int  y;
+
 
   if (iFrame == 1)
   {

@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hasan/hdd/mjpeg_maker/src/CRtspSession.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/CRtspSession.cpp.o"
   "/home/hasan/hdd/mjpeg_maker/src/CStreamer.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/CStreamer.cpp.o"
   "/home/hasan/hdd/mjpeg_maker/src/JPEGSamples.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/JPEGSamples.cpp.o"
-  "/home/hasan/hdd/mjpeg_maker/src/JPEG_Test.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/JPEG_Test.cpp.o"
   "/home/hasan/hdd/mjpeg_maker/src/JPEG_Write.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/JPEG_Write.cpp.o"
   "/home/hasan/hdd/mjpeg_maker/src/client_handler.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/client_handler.cpp.o"
   "/home/hasan/hdd/mjpeg_maker/src/fake_source.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o"

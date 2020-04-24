@@ -204,33 +204,6 @@ src/JPEGSamples.cpp.s:
 	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEGSamples.cpp.s
 .PHONY : src/JPEGSamples.cpp.s
 
-src/JPEG_Test.o: src/JPEG_Test.cpp.o
-
-.PHONY : src/JPEG_Test.o
-
-# target to build an object file
-src/JPEG_Test.cpp.o:
-	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEG_Test.cpp.o
-.PHONY : src/JPEG_Test.cpp.o
-
-src/JPEG_Test.i: src/JPEG_Test.cpp.i
-
-.PHONY : src/JPEG_Test.i
-
-# target to preprocess a source file
-src/JPEG_Test.cpp.i:
-	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEG_Test.cpp.i
-.PHONY : src/JPEG_Test.cpp.i
-
-src/JPEG_Test.s: src/JPEG_Test.cpp.s
-
-.PHONY : src/JPEG_Test.s
-
-# target to generate assembly for a file
-src/JPEG_Test.cpp.s:
-	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEG_Test.cpp.s
-.PHONY : src/JPEG_Test.cpp.s
-
 src/JPEG_Write.o: src/JPEG_Write.cpp.o
 
 .PHONY : src/JPEG_Write.o
@@ -411,9 +384,6 @@ help:
 	@echo "... src/JPEGSamples.o"
 	@echo "... src/JPEGSamples.i"
 	@echo "... src/JPEGSamples.s"
-	@echo "... src/JPEG_Test.o"
-	@echo "... src/JPEG_Test.i"
-	@echo "... src/JPEG_Test.s"
 	@echo "... src/JPEG_Write.o"
 	@echo "... src/JPEG_Write.i"
 	@echo "... src/JPEG_Write.s"

@@ -55,6 +55,9 @@ CStreamer::~CStreamer()
     cout << "in destructor " << endl;
 };
 
+unsigned char CStreamer::GetQualityFactor() {
+	return QUALITY_FACTOR;
+}
 
 
 void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int Chn)
@@ -101,7 +104,7 @@ void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int Chn)
     RtpBuf[18] = 0x00;
     RtpBuf[19] = 0x00;
     RtpBuf[20] = 0x01;                               // type
-    RtpBuf[21] = 0x5e;                               // quality scale factor
+    RtpBuf[21] = QUALITY_FACTOR;                     // quality scale factor
     if (Chn == 0)
     {
         RtpBuf[22] = WIDTH/8;//0x06;                           // width  / 8 -> 48 pixel

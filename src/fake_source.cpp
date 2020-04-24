@@ -17,7 +17,7 @@ extern "C" {
 #endif
 
 #include <jpeglib.h>
-
+#include "jpeg_writer.h"
 
 
 #include <libavcodec/avcodec.h>
@@ -35,8 +35,9 @@ using namespace std;
 using namespace mjpeg_maker;
 
 const string FakeSource::filename = "/media/hasan/External/Movie/IceAge.avi";
-static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data);
+static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor);
 
+/*
 GLOBAL(void)
 init_JPEG ();
 
@@ -46,6 +47,9 @@ write_JPEG_file (char * data, int quality);
 GLOBAL(void)
 finalize_JPEG ();
 
+*/
+
+JPEG_Writer writer;
 
 
 FakeSource::FakeSource(CStreamer * streamer) : StreamSource(WIDTH, HEIGHT, streamer), quit(false), tid(NULL)
@@ -173,8 +177,9 @@ void * FakeSource::stream_generator(void * arg) {
 		 pCodecCtx->width, pCodecCtx->height);
 
 	// Read frames and save first five frames to disk
-	i=0;
-	init_JPEG();
+
+	//init_JPEG();
+	writer.Initialize(520, 274);
 
 	printf("before data read\n");
 
@@ -205,7 +210,7 @@ void * FakeSource::stream_generator(void * arg) {
 				if(info->streamer->streamStarted)
 				{
 					SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height,
-						1, info->streamer->data);
+						1, info->streamer->data, (int) info->streamer->GetQualityFactor());
 
 					info->streamer->StreamImage(1);
 				}
@@ -232,7 +237,7 @@ int image_width;		/* Number of columns in image */
 
 AVFrame *curFrame;
 
-void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data) {
+void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor) {
   FILE *pFile;
   char szFilename[32];
   int  y;
@@ -243,7 +248,8 @@ void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data) 
 	  curFrame = pFrame;
 	  image_height = height;
 	  image_width = width;
-	  write_JPEG_file(data, 0x5e);
+	  //write_JPEG_file(data, qualityFactor);
+	  writer.Write(data, pFrame, qualityFactor);
 
   }
 

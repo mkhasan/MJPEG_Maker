@@ -19,6 +19,7 @@ class CStreamer
 {
 
 	friend class Client_Handler;
+	const unsigned char QUALITY_FACTOR = 0x5e;
 
 public:
 
@@ -46,6 +47,7 @@ public:
 
     int svc();
 
+    unsigned char GetQualityFactor();
 
 
 private:

@@ -204,33 +204,6 @@ src/JPEGSamples.cpp.s:
 	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEGSamples.cpp.s
 .PHONY : src/JPEGSamples.cpp.s
 
-src/JPEG_Write.o: src/JPEG_Write.cpp.o
-
-.PHONY : src/JPEG_Write.o
-
-# target to build an object file
-src/JPEG_Write.cpp.o:
-	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEG_Write.cpp.o
-.PHONY : src/JPEG_Write.cpp.o
-
-src/JPEG_Write.i: src/JPEG_Write.cpp.i
-
-.PHONY : src/JPEG_Write.i
-
-# target to preprocess a source file
-src/JPEG_Write.cpp.i:
-	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEG_Write.cpp.i
-.PHONY : src/JPEG_Write.cpp.i
-
-src/JPEG_Write.s: src/JPEG_Write.cpp.s
-
-.PHONY : src/JPEG_Write.s
-
-# target to generate assembly for a file
-src/JPEG_Write.cpp.s:
-	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEG_Write.cpp.s
-.PHONY : src/JPEG_Write.cpp.s
-
 src/client_handler.o: src/client_handler.cpp.o
 
 .PHONY : src/client_handler.o
@@ -284,6 +257,33 @@ src/fake_source.s: src/fake_source.cpp.s
 src/fake_source.cpp.s:
 	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.s
 .PHONY : src/fake_source.cpp.s
+
+src/jpeg_writer.o: src/jpeg_writer.cpp.o
+
+.PHONY : src/jpeg_writer.o
+
+# target to build an object file
+src/jpeg_writer.cpp.o:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o
+.PHONY : src/jpeg_writer.cpp.o
+
+src/jpeg_writer.i: src/jpeg_writer.cpp.i
+
+.PHONY : src/jpeg_writer.i
+
+# target to preprocess a source file
+src/jpeg_writer.cpp.i:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.i
+.PHONY : src/jpeg_writer.cpp.i
+
+src/jpeg_writer.s: src/jpeg_writer.cpp.s
+
+.PHONY : src/jpeg_writer.s
+
+# target to generate assembly for a file
+src/jpeg_writer.cpp.s:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.s
+.PHONY : src/jpeg_writer.cpp.s
 
 src/mjepg_maker.o: src/mjepg_maker.cpp.o
 
@@ -384,15 +384,15 @@ help:
 	@echo "... src/JPEGSamples.o"
 	@echo "... src/JPEGSamples.i"
 	@echo "... src/JPEGSamples.s"
-	@echo "... src/JPEG_Write.o"
-	@echo "... src/JPEG_Write.i"
-	@echo "... src/JPEG_Write.s"
 	@echo "... src/client_handler.o"
 	@echo "... src/client_handler.i"
 	@echo "... src/client_handler.s"
 	@echo "... src/fake_source.o"
 	@echo "... src/fake_source.i"
 	@echo "... src/fake_source.s"
+	@echo "... src/jpeg_writer.o"
+	@echo "... src/jpeg_writer.i"
+	@echo "... src/jpeg_writer.s"
 	@echo "... src/mjepg_maker.o"
 	@echo "... src/mjepg_maker.i"
 	@echo "... src/mjepg_maker.s"

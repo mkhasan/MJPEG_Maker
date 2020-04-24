@@ -60,20 +60,6 @@ JPEGSamples.h
 
 /home/hasan/hdd/mjpeg_maker/src/JPEGSamples.h
 
-/home/hasan/hdd/mjpeg_maker/src/JPEG_Write.cpp
-stdio.h
--
-stdlib.h
--
-config.h
-/home/hasan/hdd/mjpeg_maker/src/config.h
-jpeglib.h
--
-libavutil/frame.h
--
-setjmp.h
--
-
 /home/hasan/hdd/mjpeg_maker/src/client_acceptor.h
 ace/Acceptor.h
 /home/hasan/hdd/mjpeg_maker/src/ace/Acceptor.h
@@ -113,6 +99,8 @@ unistd.h
 -
 jpeglib.h
 -
+jpeg_writer.h
+/home/hasan/hdd/mjpeg_maker/src/jpeg_writer.h
 libavcodec/avcodec.h
 -
 libavformat/avformat.h
@@ -124,6 +112,20 @@ libswscale/swscale.h
 stream_source.h
 /home/hasan/hdd/mjpeg_maker/src/stream_source.h
 string
+-
+
+/home/hasan/hdd/mjpeg_maker/src/jpeg_writer.cpp
+jpeg_writer.h
+/home/hasan/hdd/mjpeg_maker/src/jpeg_writer.h
+
+/home/hasan/hdd/mjpeg_maker/src/jpeg_writer.h
+stdlib.h
+-
+stdio.h
+-
+jpeglib.h
+-
+libavutil/frame.h
 -
 
 /home/hasan/hdd/mjpeg_maker/src/mjepg_maker.cpp

@@ -8,7 +8,7 @@
 
 #include "CStreamer.h"
 #include "JPEGSamples.h"
-
+#include "mjpeg_tester.h"
 
 #include "config.h"
 #include <stdio.h>
@@ -118,11 +118,19 @@ void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int Chn)
     m_SequenceNumber++;                              // prepare the packet counter for the next packet
     m_Timestamp += 3600;                             // fixed timestamp increment for a frame rate of 25fps
 
-    if (m_TCPTransport) // RTP over RTSP - we send the buffer + 4 byte additional header
+    if (m_TCPTransport) { // RTP over RTSP - we send the buffer + 4 byte additional header
     	m_ClientHandler->peer().send_n(RtpBuf, RtpPacketSize + 4,0);
-        //send(m_Client,RtpBuf,RtpPacketSize + 4,0);
-    else                // UDP - we send just the buffer by skipping the 4 byte RTP over RTSP header
+    	printf("using tcp\n");
+    }
+
+
+    else {               // UDP - we send just the buffer by skipping the 4 byte RTP over RTSP header
     	m_RtpSocket.send (&RtpBuf[4], RtpPacketSize, remoteAddr);
+    	//printf("using udp\n");
+
+
+
+    }
     	//sendto(m_RtpSocket,&RtpBuf[4],RtpPacketSize,0,(SOCKADDR *) & RecvAddr,sizeof(RecvAddr));
 
 };
@@ -268,6 +276,10 @@ char * CStreamer::GetData(int & payloadLen)
 
 	int imageLen = GetImageLength(data);
 
+	//if(imageLen > 0) {
+		//WriteIntoFile(data, imageLen);
+	//}
+
 	assert(imageLen >= 0);
 
 
@@ -294,7 +306,10 @@ char * CStreamer::GetData(int & payloadLen)
 
 	}
 
-	assert((width == WIDTH) && (height == HEIGHT));
+	if (!((width == WIDTH) && (height == HEIGHT))) {
+		printf("width = %d and height = %d \n", width, height);
+		assert((width == WIDTH) && (height == HEIGHT));
+	}
 	payloadLen = imageLen - k;
 
 	return &data[k];

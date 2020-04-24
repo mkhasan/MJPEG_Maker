@@ -350,12 +350,13 @@ void CRtspSession::Handle_RtspPLAY()
         DateHeader(),
         m_RtspSessionID);
 
+    printf("going to play ...");
     send(m_RtspClientHandler,Response,strlen(Response),0);
 }
 
 char const * CRtspSession::DateHeader() 
 {
-    char buf[200];    
+    static char buf[200];
     time_t tt = time(NULL);
     strftime(buf, sizeof buf, "Date: %a, %b %d %Y %H:%M:%S GMT", gmtime(&tt));
     return buf;

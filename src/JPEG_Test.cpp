@@ -50,8 +50,8 @@ extern "C" {
 #include "CStreamer.h"
 
 //const char * STREAM = "rtsp://admin:admin@192.168.1.100:554/12";
-const char * STREAM = "rtsp://admin:admin@192.168.1.101:554/stream1";
-
+//const char * STREAM = "rtsp://admin:admin@192.168.1.101:554/stream1";
+const char * STREAM = "/media/hasan/External/Movie/IceAge.avi";
 
 GLOBAL(void)
 init_JPEG ();
@@ -82,7 +82,7 @@ void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data) 
 	  curFrame = pFrame;
 	  image_height = height;
 	  image_width = width;
-	  write_JPEG_file(data, 94);
+	  write_JPEG_file(data, 0x5e);
 
   }
 
@@ -236,9 +236,11 @@ void * Start(void * arg) {
   i=0;
   init_JPEG();
 
+  printf("before data read\n");
 
   while(av_read_frame(pFormatCtx, &packet)>=0 && (pStreamer->finished == 0)) {
 
+	  printf("data read\n");
     // Is this a packet from the video stream?
     if(packet.stream_index==videoStream) {
       // Decode video frame
@@ -271,11 +273,12 @@ void * Start(void * arg) {
 	}
       }
 
-      printf("value of index %d \n", i++);
+      //printf("value of index %d \n", i++);
     }
 
     // Free the packet that was allocated by av_read_frame
     av_free_packet(&packet);
+    usleep(40000);
 
   //  cout<< "tsleep : "<<tsleep<<" twakeup : "<<twakeup<<" t1 :"<<t1<<endl;
 

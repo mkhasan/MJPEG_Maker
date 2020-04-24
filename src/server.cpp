@@ -84,6 +84,8 @@ main (int argc, char *argv[])
    signal(SIGQUIT, catch_signal);
    signal(SIGTSTP, catch_signal);
    signal(SIGPIPE, catch_signal);
+
+   printf("url=rtsp://127.0.0.1:8554/mjpeg/1\n");
   /* In our earlier servers, we used a global pointer to get to the
     reactor. I've never really liked that idea, so I've moved it into
     main() this time. When we get to the Client_Handler object you'll

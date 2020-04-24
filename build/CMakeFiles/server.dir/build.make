@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/usrc/hdd/mjpeg_maker
+CMAKE_SOURCE_DIR = /home/hasan/hdd/mjpeg_maker
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/usrc/hdd/mjpeg_maker/build
+CMAKE_BINARY_DIR = /home/hasan/hdd/mjpeg_maker/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/server.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/server.dir/flags.make
 
 CMakeFiles/server.dir/src/server.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/server.cpp.o: ../src/server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usrc/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/server.dir/src/server.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/server.cpp.o -c /home/usrc/hdd/mjpeg_maker/src/server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/server.dir/src/server.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/server.cpp.o -c /home/hasan/hdd/mjpeg_maker/src/server.cpp
 
 CMakeFiles/server.dir/src/server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usrc/hdd/mjpeg_maker/src/server.cpp > CMakeFiles/server.dir/src/server.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hasan/hdd/mjpeg_maker/src/server.cpp > CMakeFiles/server.dir/src/server.cpp.i
 
 CMakeFiles/server.dir/src/server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usrc/hdd/mjpeg_maker/src/server.cpp -o CMakeFiles/server.dir/src/server.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hasan/hdd/mjpeg_maker/src/server.cpp -o CMakeFiles/server.dir/src/server.cpp.s
 
 CMakeFiles/server.dir/src/server.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/server.dir/src/server.cpp.o.provides.build: CMakeFiles/server.dir/src
 
 CMakeFiles/server.dir/src/client_handler.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/client_handler.cpp.o: ../src/client_handler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usrc/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/server.dir/src/client_handler.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/client_handler.cpp.o -c /home/usrc/hdd/mjpeg_maker/src/client_handler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/server.dir/src/client_handler.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/client_handler.cpp.o -c /home/hasan/hdd/mjpeg_maker/src/client_handler.cpp
 
 CMakeFiles/server.dir/src/client_handler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/client_handler.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usrc/hdd/mjpeg_maker/src/client_handler.cpp > CMakeFiles/server.dir/src/client_handler.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hasan/hdd/mjpeg_maker/src/client_handler.cpp > CMakeFiles/server.dir/src/client_handler.cpp.i
 
 CMakeFiles/server.dir/src/client_handler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/client_handler.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usrc/hdd/mjpeg_maker/src/client_handler.cpp -o CMakeFiles/server.dir/src/client_handler.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hasan/hdd/mjpeg_maker/src/client_handler.cpp -o CMakeFiles/server.dir/src/client_handler.cpp.s
 
 CMakeFiles/server.dir/src/client_handler.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/server.dir/src/client_handler.cpp.o.provides.build: CMakeFiles/server
 
 CMakeFiles/server.dir/src/CStreamer.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/CStreamer.cpp.o: ../src/CStreamer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usrc/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/src/CStreamer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/CStreamer.cpp.o -c /home/usrc/hdd/mjpeg_maker/src/CStreamer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/src/CStreamer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/CStreamer.cpp.o -c /home/hasan/hdd/mjpeg_maker/src/CStreamer.cpp
 
 CMakeFiles/server.dir/src/CStreamer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/CStreamer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usrc/hdd/mjpeg_maker/src/CStreamer.cpp > CMakeFiles/server.dir/src/CStreamer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hasan/hdd/mjpeg_maker/src/CStreamer.cpp > CMakeFiles/server.dir/src/CStreamer.cpp.i
 
 CMakeFiles/server.dir/src/CStreamer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/CStreamer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usrc/hdd/mjpeg_maker/src/CStreamer.cpp -o CMakeFiles/server.dir/src/CStreamer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hasan/hdd/mjpeg_maker/src/CStreamer.cpp -o CMakeFiles/server.dir/src/CStreamer.cpp.s
 
 CMakeFiles/server.dir/src/CStreamer.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/server.dir/src/CStreamer.cpp.o.provides.build: CMakeFiles/server.dir/
 
 CMakeFiles/server.dir/src/JPEGSamples.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/JPEGSamples.cpp.o: ../src/JPEGSamples.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usrc/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/server.dir/src/JPEGSamples.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/JPEGSamples.cpp.o -c /home/usrc/hdd/mjpeg_maker/src/JPEGSamples.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/server.dir/src/JPEGSamples.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/JPEGSamples.cpp.o -c /home/hasan/hdd/mjpeg_maker/src/JPEGSamples.cpp
 
 CMakeFiles/server.dir/src/JPEGSamples.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/JPEGSamples.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usrc/hdd/mjpeg_maker/src/JPEGSamples.cpp > CMakeFiles/server.dir/src/JPEGSamples.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hasan/hdd/mjpeg_maker/src/JPEGSamples.cpp > CMakeFiles/server.dir/src/JPEGSamples.cpp.i
 
 CMakeFiles/server.dir/src/JPEGSamples.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/JPEGSamples.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usrc/hdd/mjpeg_maker/src/JPEGSamples.cpp -o CMakeFiles/server.dir/src/JPEGSamples.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hasan/hdd/mjpeg_maker/src/JPEGSamples.cpp -o CMakeFiles/server.dir/src/JPEGSamples.cpp.s
 
 CMakeFiles/server.dir/src/JPEGSamples.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/server.dir/src/JPEGSamples.cpp.o.provides.build: CMakeFiles/server.di
 
 CMakeFiles/server.dir/src/CRtspSession.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/CRtspSession.cpp.o: ../src/CRtspSession.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usrc/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/server.dir/src/CRtspSession.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/CRtspSession.cpp.o -c /home/usrc/hdd/mjpeg_maker/src/CRtspSession.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/server.dir/src/CRtspSession.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/CRtspSession.cpp.o -c /home/hasan/hdd/mjpeg_maker/src/CRtspSession.cpp
 
 CMakeFiles/server.dir/src/CRtspSession.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/CRtspSession.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usrc/hdd/mjpeg_maker/src/CRtspSession.cpp > CMakeFiles/server.dir/src/CRtspSession.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hasan/hdd/mjpeg_maker/src/CRtspSession.cpp > CMakeFiles/server.dir/src/CRtspSession.cpp.i
 
 CMakeFiles/server.dir/src/CRtspSession.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/CRtspSession.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usrc/hdd/mjpeg_maker/src/CRtspSession.cpp -o CMakeFiles/server.dir/src/CRtspSession.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hasan/hdd/mjpeg_maker/src/CRtspSession.cpp -o CMakeFiles/server.dir/src/CRtspSession.cpp.s
 
 CMakeFiles/server.dir/src/CRtspSession.cpp.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/server.dir/src/CRtspSession.cpp.o.provides.build: CMakeFiles/server.d
 
 CMakeFiles/server.dir/src/JPEG_Test.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/JPEG_Test.cpp.o: ../src/JPEG_Test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usrc/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/server.dir/src/JPEG_Test.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/JPEG_Test.cpp.o -c /home/usrc/hdd/mjpeg_maker/src/JPEG_Test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/server.dir/src/JPEG_Test.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/JPEG_Test.cpp.o -c /home/hasan/hdd/mjpeg_maker/src/JPEG_Test.cpp
 
 CMakeFiles/server.dir/src/JPEG_Test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/JPEG_Test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usrc/hdd/mjpeg_maker/src/JPEG_Test.cpp > CMakeFiles/server.dir/src/JPEG_Test.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hasan/hdd/mjpeg_maker/src/JPEG_Test.cpp > CMakeFiles/server.dir/src/JPEG_Test.cpp.i
 
 CMakeFiles/server.dir/src/JPEG_Test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/JPEG_Test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usrc/hdd/mjpeg_maker/src/JPEG_Test.cpp -o CMakeFiles/server.dir/src/JPEG_Test.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hasan/hdd/mjpeg_maker/src/JPEG_Test.cpp -o CMakeFiles/server.dir/src/JPEG_Test.cpp.s
 
 CMakeFiles/server.dir/src/JPEG_Test.cpp.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/server.dir/src/JPEG_Test.cpp.o.provides.build: CMakeFiles/server.dir/
 
 CMakeFiles/server.dir/src/JPEG_Write.cpp.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/JPEG_Write.cpp.o: ../src/JPEG_Write.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usrc/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/server.dir/src/JPEG_Write.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/JPEG_Write.cpp.o -c /home/usrc/hdd/mjpeg_maker/src/JPEG_Write.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/server.dir/src/JPEG_Write.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/JPEG_Write.cpp.o -c /home/hasan/hdd/mjpeg_maker/src/JPEG_Write.cpp
 
 CMakeFiles/server.dir/src/JPEG_Write.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/JPEG_Write.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usrc/hdd/mjpeg_maker/src/JPEG_Write.cpp > CMakeFiles/server.dir/src/JPEG_Write.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hasan/hdd/mjpeg_maker/src/JPEG_Write.cpp > CMakeFiles/server.dir/src/JPEG_Write.cpp.i
 
 CMakeFiles/server.dir/src/JPEG_Write.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/JPEG_Write.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usrc/hdd/mjpeg_maker/src/JPEG_Write.cpp -o CMakeFiles/server.dir/src/JPEG_Write.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hasan/hdd/mjpeg_maker/src/JPEG_Write.cpp -o CMakeFiles/server.dir/src/JPEG_Write.cpp.s
 
 CMakeFiles/server.dir/src/JPEG_Write.cpp.o.requires:
 
@@ -225,6 +225,30 @@ CMakeFiles/server.dir/src/JPEG_Write.cpp.o.provides: CMakeFiles/server.dir/src/J
 CMakeFiles/server.dir/src/JPEG_Write.cpp.o.provides.build: CMakeFiles/server.dir/src/JPEG_Write.cpp.o
 
 
+CMakeFiles/server.dir/src/mjpeg_tester.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/src/mjpeg_tester.cpp.o: ../src/mjpeg_tester.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/server.dir/src/mjpeg_tester.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/mjpeg_tester.cpp.o -c /home/hasan/hdd/mjpeg_maker/src/mjpeg_tester.cpp
+
+CMakeFiles/server.dir/src/mjpeg_tester.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/mjpeg_tester.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hasan/hdd/mjpeg_maker/src/mjpeg_tester.cpp > CMakeFiles/server.dir/src/mjpeg_tester.cpp.i
+
+CMakeFiles/server.dir/src/mjpeg_tester.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/mjpeg_tester.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hasan/hdd/mjpeg_maker/src/mjpeg_tester.cpp -o CMakeFiles/server.dir/src/mjpeg_tester.cpp.s
+
+CMakeFiles/server.dir/src/mjpeg_tester.cpp.o.requires:
+
+.PHONY : CMakeFiles/server.dir/src/mjpeg_tester.cpp.o.requires
+
+CMakeFiles/server.dir/src/mjpeg_tester.cpp.o.provides: CMakeFiles/server.dir/src/mjpeg_tester.cpp.o.requires
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/mjpeg_tester.cpp.o.provides.build
+.PHONY : CMakeFiles/server.dir/src/mjpeg_tester.cpp.o.provides
+
+CMakeFiles/server.dir/src/mjpeg_tester.cpp.o.provides.build: CMakeFiles/server.dir/src/mjpeg_tester.cpp.o
+
+
 # Object files for target server
 server_OBJECTS = \
 "CMakeFiles/server.dir/src/server.cpp.o" \
@@ -233,7 +257,8 @@ server_OBJECTS = \
 "CMakeFiles/server.dir/src/JPEGSamples.cpp.o" \
 "CMakeFiles/server.dir/src/CRtspSession.cpp.o" \
 "CMakeFiles/server.dir/src/JPEG_Test.cpp.o" \
-"CMakeFiles/server.dir/src/JPEG_Write.cpp.o"
+"CMakeFiles/server.dir/src/JPEG_Write.cpp.o" \
+"CMakeFiles/server.dir/src/mjpeg_tester.cpp.o"
 
 # External object files for target server
 server_EXTERNAL_OBJECTS =
@@ -245,9 +270,10 @@ server_EXTERNAL_OBJECTS =
 ../bin/server: CMakeFiles/server.dir/src/CRtspSession.cpp.o
 ../bin/server: CMakeFiles/server.dir/src/JPEG_Test.cpp.o
 ../bin/server: CMakeFiles/server.dir/src/JPEG_Write.cpp.o
+../bin/server: CMakeFiles/server.dir/src/mjpeg_tester.cpp.o
 ../bin/server: CMakeFiles/server.dir/build.make
 ../bin/server: CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/usrc/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ../bin/server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ../bin/server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -262,6 +288,7 @@ CMakeFiles/server.dir/requires: CMakeFiles/server.dir/src/JPEGSamples.cpp.o.requ
 CMakeFiles/server.dir/requires: CMakeFiles/server.dir/src/CRtspSession.cpp.o.requires
 CMakeFiles/server.dir/requires: CMakeFiles/server.dir/src/JPEG_Test.cpp.o.requires
 CMakeFiles/server.dir/requires: CMakeFiles/server.dir/src/JPEG_Write.cpp.o.requires
+CMakeFiles/server.dir/requires: CMakeFiles/server.dir/src/mjpeg_tester.cpp.o.requires
 
 .PHONY : CMakeFiles/server.dir/requires
 
@@ -270,6 +297,6 @@ CMakeFiles/server.dir/clean:
 .PHONY : CMakeFiles/server.dir/clean
 
 CMakeFiles/server.dir/depend:
-	cd /home/usrc/hdd/mjpeg_maker/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/usrc/hdd/mjpeg_maker /home/usrc/hdd/mjpeg_maker /home/usrc/hdd/mjpeg_maker/build /home/usrc/hdd/mjpeg_maker/build /home/usrc/hdd/mjpeg_maker/build/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/hasan/hdd/mjpeg_maker/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hasan/hdd/mjpeg_maker /home/hasan/hdd/mjpeg_maker /home/hasan/hdd/mjpeg_maker/build /home/hasan/hdd/mjpeg_maker/build /home/hasan/hdd/mjpeg_maker/build/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/server.dir/depend
 

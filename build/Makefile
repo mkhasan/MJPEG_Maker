@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/usrc/hdd/mjpeg_maker
+CMAKE_SOURCE_DIR = /home/hasan/hdd/mjpeg_maker
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/usrc/hdd/mjpeg_maker/build
+CMAKE_BINARY_DIR = /home/hasan/hdd/mjpeg_maker/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +67,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/usrc/hdd/mjpeg_maker/build/CMakeFiles /home/usrc/hdd/mjpeg_maker/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hasan/hdd/mjpeg_maker/build/CMakeFiles /home/hasan/hdd/mjpeg_maker/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/usrc/hdd/mjpeg_maker/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hasan/hdd/mjpeg_maker/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,19 +122,6 @@ server: cmake_check_build_system
 server/fast:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
 .PHONY : server/fast
-
-#=============================================================================
-# Target rules for targets named compress
-
-# Build rule for target.
-compress: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 compress
-.PHONY : compress
-
-# fast build rule for target.
-compress/fast:
-	$(MAKE) -f CMakeFiles/compress.dir/build.make CMakeFiles/compress.dir/build
-.PHONY : compress/fast
 
 src/CRtspSession.o: src/CRtspSession.cpp.o
 
@@ -298,32 +285,32 @@ src/client_handler.cpp.s:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/client_handler.cpp.s
 .PHONY : src/client_handler.cpp.s
 
-src/compress.o: src/compress.cpp.o
+src/mjpeg_tester.o: src/mjpeg_tester.cpp.o
 
-.PHONY : src/compress.o
+.PHONY : src/mjpeg_tester.o
 
 # target to build an object file
-src/compress.cpp.o:
-	$(MAKE) -f CMakeFiles/compress.dir/build.make CMakeFiles/compress.dir/src/compress.cpp.o
-.PHONY : src/compress.cpp.o
+src/mjpeg_tester.cpp.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/mjpeg_tester.cpp.o
+.PHONY : src/mjpeg_tester.cpp.o
 
-src/compress.i: src/compress.cpp.i
+src/mjpeg_tester.i: src/mjpeg_tester.cpp.i
 
-.PHONY : src/compress.i
+.PHONY : src/mjpeg_tester.i
 
 # target to preprocess a source file
-src/compress.cpp.i:
-	$(MAKE) -f CMakeFiles/compress.dir/build.make CMakeFiles/compress.dir/src/compress.cpp.i
-.PHONY : src/compress.cpp.i
+src/mjpeg_tester.cpp.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/mjpeg_tester.cpp.i
+.PHONY : src/mjpeg_tester.cpp.i
 
-src/compress.s: src/compress.cpp.s
+src/mjpeg_tester.s: src/mjpeg_tester.cpp.s
 
-.PHONY : src/compress.s
+.PHONY : src/mjpeg_tester.s
 
 # target to generate assembly for a file
-src/compress.cpp.s:
-	$(MAKE) -f CMakeFiles/compress.dir/build.make CMakeFiles/compress.dir/src/compress.cpp.s
-.PHONY : src/compress.cpp.s
+src/mjpeg_tester.cpp.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/mjpeg_tester.cpp.s
+.PHONY : src/mjpeg_tester.cpp.s
 
 src/server.o: src/server.cpp.o
 
@@ -358,10 +345,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... server"
-	@echo "... compress"
+	@echo "... edit_cache"
 	@echo "... src/CRtspSession.o"
 	@echo "... src/CRtspSession.i"
 	@echo "... src/CRtspSession.s"
@@ -380,9 +366,9 @@ help:
 	@echo "... src/client_handler.o"
 	@echo "... src/client_handler.i"
 	@echo "... src/client_handler.s"
-	@echo "... src/compress.o"
-	@echo "... src/compress.i"
-	@echo "... src/compress.s"
+	@echo "... src/mjpeg_tester.o"
+	@echo "... src/mjpeg_tester.i"
+	@echo "... src/mjpeg_tester.s"
 	@echo "... src/server.o"
 	@echo "... src/server.i"
 	@echo "... src/server.s"

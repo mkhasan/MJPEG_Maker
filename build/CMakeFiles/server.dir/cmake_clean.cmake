@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/server.dir/src/CRtspSession.cpp.o"
   "CMakeFiles/server.dir/src/JPEG_Test.cpp.o"
   "CMakeFiles/server.dir/src/JPEG_Write.cpp.o"
+  "CMakeFiles/server.dir/src/mjpeg_tester.cpp.o"
   "../bin/server.pdb"
   "../bin/server"
 )

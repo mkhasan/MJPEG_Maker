@@ -285,6 +285,7 @@ Client_Handler::svc(void)
 				//TheImageProc::instance()->get_frame = 1;
 				cout << "done 2" << endl;
 				//ACE_OS::sleep(ACE_Time_Value(0,500000));
+				printf("started ...");
 				Streamer.streamStarted = 1;
 
 			}

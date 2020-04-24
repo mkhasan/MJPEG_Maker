@@ -35,8 +35,6 @@ CStreamer.h
 /home/hasan/hdd/mjpeg_maker/src/CStreamer.h
 JPEGSamples.h
 /home/hasan/hdd/mjpeg_maker/src/JPEGSamples.h
-mjpeg_tester.h
-/home/hasan/hdd/mjpeg_maker/src/mjpeg_tester.h
 config.h
 /home/hasan/hdd/mjpeg_maker/src/config.h
 stdio.h
@@ -146,16 +144,6 @@ ace/Signal.h
 client_acceptor.h
 /home/hasan/hdd/mjpeg_maker/src/client_acceptor.h
 
-/home/hasan/hdd/mjpeg_maker/src/mjpeg_tester.cpp
-fstream
--
-stdio.h
--
-string.h
--
-
-/home/hasan/hdd/mjpeg_maker/src/mjpeg_tester.h
-
 /home/hasan/hdd/mjpeg_maker/src/stream_source.cpp
 stream_source.h
 /home/hasan/hdd/mjpeg_maker/src/stream_source.h
@@ -167,6 +155,8 @@ new
 /home/hasan/hdd/mjpeg_maker/src/stream_source.h
 CStreamer.h
 /home/hasan/hdd/mjpeg_maker/src/CStreamer.h
+image_writer.h
+/home/hasan/hdd/mjpeg_maker/src/image_writer.h
 
 /home/hasan/hdd/mjpeg_maker/src/utils.h
 string

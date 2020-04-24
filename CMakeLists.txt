@@ -23,10 +23,8 @@ set ( SRC
 	src/CStreamer.cpp
 	src/JPEGSamples.cpp
 	src/CRtspSession.cpp
-	#src/JPEG_Write.cpp
 	src/image_writer.cpp
 	src/jpeg_writer.cpp
-	src/mjpeg_tester.cpp
 	src/stream_source.cpp
 	src/fake_source.cpp
 )			

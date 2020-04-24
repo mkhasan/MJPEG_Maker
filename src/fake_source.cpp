@@ -35,7 +35,7 @@ using namespace std;
 using namespace mjpeg_maker;
 
 const string FakeSource::filename = "/media/hasan/External/Movie/IceAge.avi";
-static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor);
+static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor, ImageWriter * writer);
 
 /*
 GLOBAL(void)
@@ -49,13 +49,14 @@ finalize_JPEG ();
 
 */
 
-ImageWriter * writer;
 
 
-FakeSource::FakeSource(CStreamer * streamer) : StreamSource(WIDTH, HEIGHT, streamer), quit(false), tid(NULL)
+
+FakeSource::FakeSource(CStreamer * streamer) : StreamSource(WIDTH, HEIGHT, streamer, new JPEG_Writer(WIDTH, HEIGHT)), quit(false), tid(NULL)
 {
 	info.quit = &quit;
 	info.streamer = streamer;
+	info.writer = writer;
 
 	int err = pthread_create(&tid, NULL, &stream_generator, (void *) &info);
 	if (err != 0)
@@ -74,6 +75,8 @@ FakeSource::~FakeSource() {
 		quit = true;
 		pthread_join(tid, NULL);
 	}
+
+	delete writer;
 }
 
 
@@ -183,13 +186,13 @@ void * FakeSource::stream_generator(void * arg) {
 
 	printf("before data read\n");
 
-	writer = new JPEG_Writer(FakeSource::WIDTH, FakeSource::HEIGHT);
 
-	writer->Initialize();
+
+	info->writer->Initialize();
 
 	while(av_read_frame(pFormatCtx, &packet)>=0 && (info->streamer->finished == 0) && *(info->quit) == false) {
 
-		printf("data read\n");
+		//printf("data read\n");
 	    // Is this a packet from the video stream?
 	    if(packet.stream_index==videoStream) {
 	      // Decode video frame
@@ -214,7 +217,7 @@ void * FakeSource::stream_generator(void * arg) {
 				if(info->streamer->streamStarted)
 				{
 					SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height,
-						1, info->streamer->data, (int) info->streamer->GetQualityFactor());
+						1, info->streamer->data, (int) info->streamer->GetQualityFactor(), info->writer);
 
 					info->streamer->StreamImage(1);
 				}
@@ -232,7 +235,7 @@ void * FakeSource::stream_generator(void * arg) {
 	}
 
 	*(info->quit) = true;
-	delete writer;
+
 	return NULL;
 }
 
@@ -242,7 +245,7 @@ void * FakeSource::stream_generator(void * arg) {
 
 //AVFrame *curFrame;
 
-void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor) {
+void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor, ImageWriter * writer) {
   FILE *pFile;
   char szFilename[32];
   int  y;

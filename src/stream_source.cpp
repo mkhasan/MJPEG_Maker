@@ -10,12 +10,13 @@
 
 #include <new>
 
-StreamSource::StreamSource(int _width, int _height, CStreamer * _streamer)
+StreamSource::StreamSource(int _width, int _height, CStreamer * _streamer, ImageWriter * _writer)
 	: width(_width)
 	, height(_height)
 	, streamer(_streamer)
+	, writer(_writer)
 {
-	streamer->data = new (std::nothrow) char[WIDTH*HEIGHT*3];
+	streamer->data = new (std::nothrow) char[writer->GetMaxDataSize()];
 }
 
 StreamSource::~StreamSource() {

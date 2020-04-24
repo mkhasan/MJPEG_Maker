@@ -9,6 +9,7 @@
 #define SRC_STREAM_SOURCE_H_
 
 #include "CStreamer.h"
+#include "image_writer.h"
 
 class StreamSource {
 
@@ -16,8 +17,9 @@ protected:
 	int width;
 	int height;
 	CStreamer * streamer;
+	ImageWriter * writer;
 public:
-	StreamSource(int width, int height, CStreamer * streamer);
+	StreamSource(int width, int height, CStreamer * streamer, ImageWriter * writer);
 	virtual ~StreamSource();
 };
 

@@ -28,6 +28,7 @@ public:
 	struct info_struct {
 		bool * quit;
 		CStreamer * streamer;
+		ImageWriter * writer;
 	} info;
 
 	FakeSource(CStreamer * streamer);

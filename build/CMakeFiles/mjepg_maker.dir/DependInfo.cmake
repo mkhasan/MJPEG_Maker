@@ -12,7 +12,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hasan/hdd/mjpeg_maker/src/image_writer.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o"
   "/home/hasan/hdd/mjpeg_maker/src/jpeg_writer.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o"
   "/home/hasan/hdd/mjpeg_maker/src/mjepg_maker.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/mjepg_maker.cpp.o"
-  "/home/hasan/hdd/mjpeg_maker/src/mjpeg_tester.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o"
   "/home/hasan/hdd/mjpeg_maker/src/stream_source.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

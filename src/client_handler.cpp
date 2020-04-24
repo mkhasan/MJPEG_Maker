@@ -19,6 +19,8 @@
 
 //void * Start(void * arg);
 
+#define ACE_DEBUG(...)
+
 StreamSource * streamSource;
 
 pthread_t tid;
@@ -71,6 +73,7 @@ Client_Handler::destroy (void)
 int
 Client_Handler::open (void *void_acceptor)
 {
+	ACE_Log_Msg::disable_debug_messages ();
   /* We need this to store the address of the client that we are now
      connected to.  We'll use it later to display a debug message.  */
   ACE_INET_Addr addr;
@@ -256,7 +259,11 @@ Client_Handler::svc(void)
 
 	*/
 
+
+
 	streamSource = new FakeSource(&Streamer);
+
+	printf("source created \n");
 
 	//sleep(3);
 
@@ -291,7 +298,7 @@ Client_Handler::svc(void)
 			if (C == RTSP_PLAY)
 			{
 				//TheImageProc::instance()->get_frame = 1;
-				cout << "done 2" << endl;
+				//cout << "done 2" << endl;
 				//ACE_OS::sleep(ACE_Time_Value(0,500000));
 				printf("started ...");
 				Streamer.streamStarted = 1;
@@ -376,7 +383,7 @@ Client_Handler::process (char *rdbuf,
 			  */
 
 
-	cout << "done " << endl;
+	//cout << "done " << endl;
 	return bytes_read;
 }
 

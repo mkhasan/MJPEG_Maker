@@ -339,33 +339,6 @@ src/mjepg_maker.cpp.s:
 	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/mjepg_maker.cpp.s
 .PHONY : src/mjepg_maker.cpp.s
 
-src/mjpeg_tester.o: src/mjpeg_tester.cpp.o
-
-.PHONY : src/mjpeg_tester.o
-
-# target to build an object file
-src/mjpeg_tester.cpp.o:
-	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o
-.PHONY : src/mjpeg_tester.cpp.o
-
-src/mjpeg_tester.i: src/mjpeg_tester.cpp.i
-
-.PHONY : src/mjpeg_tester.i
-
-# target to preprocess a source file
-src/mjpeg_tester.cpp.i:
-	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.i
-.PHONY : src/mjpeg_tester.cpp.i
-
-src/mjpeg_tester.s: src/mjpeg_tester.cpp.s
-
-.PHONY : src/mjpeg_tester.s
-
-# target to generate assembly for a file
-src/mjpeg_tester.cpp.s:
-	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.s
-.PHONY : src/mjpeg_tester.cpp.s
-
 src/stream_source.o: src/stream_source.cpp.o
 
 .PHONY : src/stream_source.o
@@ -426,9 +399,6 @@ help:
 	@echo "... src/mjepg_maker.o"
 	@echo "... src/mjepg_maker.i"
 	@echo "... src/mjepg_maker.s"
-	@echo "... src/mjpeg_tester.o"
-	@echo "... src/mjpeg_tester.i"
-	@echo "... src/mjpeg_tester.s"
 	@echo "... src/stream_source.o"
 	@echo "... src/stream_source.i"
 	@echo "... src/stream_source.s"

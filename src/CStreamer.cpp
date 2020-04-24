@@ -8,7 +8,7 @@
 
 #include "CStreamer.h"
 #include "JPEGSamples.h"
-#include "mjpeg_tester.h"
+//#include "mjpeg_tester.h"
 
 #include "config.h"
 #include <stdio.h>

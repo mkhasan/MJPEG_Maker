@@ -23,12 +23,11 @@ class CStreamer
 
 public:
 
-	static sig_atomic_t streamStarted;
-
 	const double frameRate = 40.0;
 
+	int streamStarted;
 
-	sig_atomic_t finished;
+	int finished;
 
 	char *data;
 	int dataLen;
@@ -43,9 +42,8 @@ public:
     void    InitTransport(u_short aRtpPort, u_short aRtcpPort, bool TCP);
     u_short GetRtpServerPort();
     u_short GetRtcpServerPort();
-    void    StreamImage(int StreamID);
+    void    StreamImage(int imageWidth, int imageHeight);
 
-    int svc();
 
     unsigned char GetQualityFactor();
 
@@ -64,7 +62,7 @@ private:
 	static int GetPayLoad(const char *data, int data_len, int & width, int & height);
 	static int GetDataFromFile(char * data);
 	static std::ifstream::pos_type filesize(const char* filename);
-    void    SendRtpPacket(char * Jpeg, int JpegLen, int Chn);
+    void    SendRtpPacket(char * Jpeg, int JpegLen, int width, int height);
 
     char * GetData(int & len);
 

@@ -11,7 +11,7 @@
 #define WIDTH 520 //320
 #define HEIGHT 274 //180
 #define FRAME_COUNT 270
-#define MAX_DATA_SIZE 163840
+#define MAX_DATA_SIZE (WIDTH*HEIGHT*3+1024)
 #define FRAME_RATE 40.0
 #define PATTERN "%003d.jpg"
 

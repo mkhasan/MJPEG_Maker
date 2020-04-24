@@ -28,8 +28,8 @@ extern "C" {
 
 class JPEG_Writer : public ImageWriter {
 
-	bool isInitialized;
-
+	struct jpeg_compress_struct cinfo;
+	struct jpeg_error_mgr jerr;
 
 	void init_JPEG();
 	void finalize_JPEG();

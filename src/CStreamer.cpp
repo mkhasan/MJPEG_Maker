@@ -16,7 +16,7 @@
 #include <assert.h>
 #include <new>
 
-sig_atomic_t CStreamer::streamStarted = 0;
+//sig_atomic_t CStreamer::streamStarted = 0;
 
 using namespace std;
 
@@ -25,6 +25,7 @@ CStreamer::CStreamer(Client_Handler *_aClientHandler)
 	, finished(0)
 	, dataLen(0)
 	, data(NULL)
+	, streamStarted(0)
 
 {
     m_RtpServerPort  = 0;
@@ -62,7 +63,7 @@ unsigned char CStreamer::GetQualityFactor() {
 }
 
 
-void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int Chn)
+void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height)
 {
 #define KRtpHeaderSize 12           // size of the RTP header
 #define KJpegHeaderSize 8           // size of the special JPEG payload header
@@ -107,16 +108,8 @@ void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int Chn)
     RtpBuf[19] = 0x00;
     RtpBuf[20] = 0x01;                               // type
     RtpBuf[21] = QUALITY_FACTOR;                     // quality scale factor
-    if (Chn == 0)
-    {
-        RtpBuf[22] = WIDTH/8;//0x06;                           // width  / 8 -> 48 pixel
-        RtpBuf[23] = HEIGHT/8;//0x04;                           // height / 8 -> 32 pixel
-    }
-    else
-    {
-        RtpBuf[22] = WIDTH/8;//0x08;                           // width  / 8 -> 64 pixel
-        RtpBuf[23] = HEIGHT/8;//0x06;                           // height / 8 -> 48 pixel
-    };
+    RtpBuf[22] = width/8;//0x06;                           // width  / 8 -> 48 pixel
+    RtpBuf[23] = height/8;//0x04;                           // height / 8 -> 32 pixel
     // append the JPEG scan data to the RTP buffer
     //memcpy(&RtpBuf[24],Jpeg,JpegLen);
     
@@ -196,69 +189,20 @@ u_short CStreamer::GetRtcpServerPort()
     return m_RtcpServerPort;
 };
 
-void CStreamer::StreamImage(int StreamID)
+void CStreamer::StreamImage(int imageWidth, int imageHeight)
 {
-    char  * Samples1[2] = { JpegScanDataCh1A, JpegScanDataCh1B };
-    char  * Samples2[2] = { JpegScanDataCh2A, JpegScanDataCh2B };
-    char ** JpegScanData;
-    int     JpegScanDataLen;
-
-    switch (StreamID)
-    {
-        case 0:
-        {
-            JpegScanData    = &Samples1[0]; 
-            JpegScanDataLen = KJpegCh1ScanDataLen;
-            break;
-        };
-        case 1: 
-        {
-            JpegScanData    = &Samples2[0]; 
-            JpegScanDataLen = KJpegCh2ScanDataLen;
-            break;
-        };
-    };
-
     int len;
-
-
     char * p = GetData(len);
 
 
 
     //SendRtpPacket(JpegScanData[m_SendIdx],JpegScanDataLen, StreamID);
-    SendRtpPacket(p, len, StreamID);
+    SendRtpPacket(p, len, imageWidth, imageHeight);
     m_SendIdx++;
     if (m_SendIdx > 1) m_SendIdx = 0;
 };
 
-int CStreamer::svc()
-{
-	unsigned int periodUs = (unsigned int) ((1000000.0/frameRate) + epsilon);
 
-	int steamID = 1;
-
-
-	ACE_Time_Value twakeup, tinc, tsleep, t1;
-
-    tinc.set(0, periodUs);
-    twakeup = ACE_OS::gettimeofday();
-
-    while(!finished)
-    {
-    	twakeup += tinc; // 다음 wakeup 시간 계산
-
-    	if (streamStarted)
-    		StreamImage(1);
-
-        t1 = ACE_OS::gettimeofday();
-        tsleep= twakeup - t1;
-      //  cout<< "tsleep : "<<tsleep<<" twakeup : "<<twakeup<<" t1 :"<<t1<<endl;
-        if (tsleep > ACE_Time_Value::zero)
-        	ACE_OS::sleep(tsleep);
-
-    }
-}
 
 char * CStreamer::GetData(int & payloadLen)
 {
@@ -311,10 +255,13 @@ char * CStreamer::GetData(int & payloadLen)
 
 	}
 
+	/*
 	if (!((width == WIDTH) && (height == HEIGHT))) {
 		printf("width = %d and height = %d \n", width, height);
 		assert((width == WIDTH) && (height == HEIGHT));
 	}
+
+	*/
 	payloadLen = imageLen - k;
 
 	return &data[k];
@@ -586,7 +533,7 @@ int CStreamer::GetDataFromFile(char * data)
 
 	}
 
-	assert(imageDataLen <= MAX_DATA_SIZE);
+	//assert(imageDataLen <= MAX_DATA_SIZE);
 	src.close();
 
 	return imageDataLen;

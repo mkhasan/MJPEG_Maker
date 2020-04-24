@@ -14,8 +14,6 @@
 
 using namespace mjpeg_maker;
 
-struct jpeg_compress_struct cinfo;
-struct jpeg_error_mgr jerr;
 
 
 /* abstructing the c interface */
@@ -122,7 +120,6 @@ JPEG_Writer::write_JPEG_file(unsigned char * dest, unsigned char * src, int stri
 
 JPEG_Writer::JPEG_Writer(int _image_width, int _image_height)
 	: ImageWriter(_image_width, _image_height)
-
 {
 
 }
@@ -131,6 +128,9 @@ JPEG_Writer::~JPEG_Writer() {
 	if (isInitialized) {
 		Finalize();
 	}
+
+	isInitialized = false;
+	printf("JPEG_Writer desctuctor \n");
 }
 
 void JPEG_Writer::Initialize(int _image_width, int _image_height) {
@@ -159,6 +159,7 @@ void JPEG_Writer::Finalize() {
 	if (isInitialized == false)
 		return;
 	finalize_JPEG();
+	//isInitialized = false;
 }
 
 void JPEG_Writer::Write(char * dest, char * src, int stride, int quality) {

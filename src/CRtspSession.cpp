@@ -356,7 +356,7 @@ void CRtspSession::Handle_RtspPLAY()
 
 char const * CRtspSession::DateHeader() 
 {
-    static char buf[200];
+
     time_t tt = time(NULL);
     strftime(buf, sizeof buf, "Date: %a, %b %d %Y %H:%M:%S GMT", gmtime(&tt));
     return buf;

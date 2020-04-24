@@ -36,6 +36,7 @@ enum RTSP_CMD_TYPES
 
 class CRtspSession
 {
+	char buf[200];
 public:
     CRtspSession(Client_Handler *_aClientHandler, CStreamer * aStreamer);
     ~CRtspSession();

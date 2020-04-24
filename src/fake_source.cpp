@@ -37,18 +37,6 @@ using namespace mjpeg_maker;
 const string FakeSource::filename = "/media/hasan/External/Movie/IceAge.avi";
 static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor, ImageWriter * writer);
 
-/*
-GLOBAL(void)
-init_JPEG ();
-
-GLOBAL(void)
-write_JPEG_file (char * data, int quality);
-
-GLOBAL(void)
-finalize_JPEG ();
-
-*/
-
 
 
 
@@ -219,7 +207,9 @@ void * FakeSource::stream_generator(void * arg) {
 					SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height,
 						1, info->streamer->data, (int) info->streamer->GetQualityFactor(), info->writer);
 
-					info->streamer->StreamImage(1);
+					info->streamer->StreamImage(pCodecCtx->width, pCodecCtx->height);
+
+
 				}
 			}
 
@@ -239,11 +229,6 @@ void * FakeSource::stream_generator(void * arg) {
 	return NULL;
 }
 
-//JSAMPLE * image_buffer;	/* Points to large array of R,G,B-order data */
-//int image_height;	/* Number of rows in image */
-//int image_width;		/* Number of columns in image */
-
-//AVFrame *curFrame;
 
 void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor, ImageWriter * writer) {
   FILE *pFile;

@@ -19,11 +19,9 @@
 
 //void * Start(void * arg);
 
-#define ACE_DEBUG(...)
+//#define ACE_DEBUG(...)
 
-StreamSource * streamSource;
 
-pthread_t tid;
 
 /* Our constructor doesn't do anything.  That's generally a good idea.
    Unless you want to start throwing exceptions, there isn't a really
@@ -78,6 +76,8 @@ Client_Handler::open (void *void_acceptor)
      connected to.  We'll use it later to display a debug message.  */
   ACE_INET_Addr addr;
 
+  ACE_DEBUG ((LM_DEBUG,
+  					  "(%P|%t) new connection ++++++++++++++++++++++++++++++++++++"));
   /* Our ACE_Svc_Handler baseclass gives us the peer() method as a way
     to access our underlying ACE_SOCK_Stream.  On that object, we can
     invoke the get_remote_addr() method to get get an ACE_INET_Addr
@@ -218,6 +218,7 @@ Client_Handler::handle_close (ACE_HANDLE handle,
   ACE_UNUSED_ARG (handle);
   ACE_UNUSED_ARG (mask);
 
+  printf("handler closeing");
   this->destroy ();
   return 0;
 }
@@ -249,23 +250,12 @@ Client_Handler::svc(void)
 	int err;
 	char *b;
 
-	/*
-	err = pthread_create(&tid, NULL, &Start, (void *) &Streamer);
-	if (err != 0)
-	{
-		printf("\ncan't create thread :[%s]", strerror(err));
-		return -1;
-	}
 
-	*/
-
+	StreamSource * streamSource;
 
 
 	streamSource = new FakeSource(&Streamer);
 
-	printf("source created \n");
-
-	//sleep(3);
 
 
 
@@ -318,7 +308,7 @@ Client_Handler::svc(void)
 
 
 	Streamer.finished = 1;
-	pthread_join(tid, (void  **)&b);
+
 
 	printf("return value is %d \n", b);
 

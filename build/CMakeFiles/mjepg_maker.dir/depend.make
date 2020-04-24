@@ -73,7 +73,6 @@ CMakeFiles/mjepg_maker.dir/src/mjepg_maker.cpp.o: ../src/client_handler.h
 CMakeFiles/mjepg_maker.dir/src/mjepg_maker.cpp.o: ../src/mjepg_maker.cpp
 
 CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o: ../src/CStreamer.h
-CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o: ../src/config.h
 CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o: ../src/image_writer.h
 CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o: ../src/stream_source.cpp
 CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o: ../src/stream_source.h

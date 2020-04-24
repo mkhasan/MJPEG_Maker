@@ -115,6 +115,8 @@ string
 /home/hasan/hdd/mjpeg_maker/src/image_writer.cpp
 image_writer.h
 /home/hasan/hdd/mjpeg_maker/src/image_writer.h
+stdio.h
+-
 
 /home/hasan/hdd/mjpeg_maker/src/image_writer.h
 
@@ -147,8 +149,8 @@ client_acceptor.h
 /home/hasan/hdd/mjpeg_maker/src/stream_source.cpp
 stream_source.h
 /home/hasan/hdd/mjpeg_maker/src/stream_source.h
-config.h
-/home/hasan/hdd/mjpeg_maker/src/config.h
+stdio.h
+-
 new
 -
 

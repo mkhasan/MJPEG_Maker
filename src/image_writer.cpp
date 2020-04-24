@@ -7,6 +7,8 @@
 
 #include "image_writer.h"
 
+#include <stdio.h>
+
 ImageWriter::ImageWriter(int _image_width, int _image_height, int _channel)
 	: image_width(_image_width)
 	, image_height(_image_height)
@@ -19,6 +21,7 @@ ImageWriter::ImageWriter(int _image_width, int _image_height, int _channel)
 
 ImageWriter::~ImageWriter() {
 
+	printf("ImageWriter desctuctor \n");
 }
 
 void ImageWriter::Initialize() {

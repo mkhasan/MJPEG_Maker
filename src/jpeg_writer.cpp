@@ -49,7 +49,7 @@ void JPEG_Writer::write_JPEG_file(char * data, AVFrame * curFrame, int quality) 
 //#include "config.h"
 
 
-void
+int
 JPEG_Writer::write_JPEG_file(unsigned char * dest, unsigned char * src, int stride, int quality)
 {
 	FILE * outfile;
@@ -114,6 +114,7 @@ JPEG_Writer::write_JPEG_file(unsigned char * dest, unsigned char * src, int stri
 	printf("size is %d \n", size);
 	fclose(outfile);
 
+	return size;
 
 
 	/* Step 7: release JPEG compression object */
@@ -168,8 +169,8 @@ void JPEG_Writer::Finalize() {
 	//isInitialized = false;
 }
 
-void JPEG_Writer::Write(char * dest, char * src, int stride, int quality) {
-	write_JPEG_file((unsigned char *) dest, (unsigned char *) src, stride, quality);
+int JPEG_Writer::Write(char * dest, char * src, int stride, int quality) {
+	return write_JPEG_file((unsigned char *) dest, (unsigned char *) src, stride, quality);
 }
 
 /*

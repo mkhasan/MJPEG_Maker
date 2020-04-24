@@ -204,8 +204,10 @@ void * FakeSource::stream_generator(void * arg) {
 
 				if(info->streamer->streamStarted)
 				{
-					SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height,
-						1, info->streamer->data, (int) info->streamer->GetQualityFactor(), info->writer);
+					//SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height,
+						//1, info->streamer->data, (int) info->streamer->GetQualityFactor(), info->writer);
+
+					writer->Write(info->streamer->data, (char *)pFrameRGB->data[0], pFrameRGB->linesize[0], (int) info->streamer->GetQualityFactor());
 
 					info->streamer->StreamImage(pCodecCtx->width, pCodecCtx->height);
 

@@ -34,7 +34,7 @@ class JPEG_Writer : public ImageWriter {
 	void init_JPEG();
 	void finalize_JPEG();
 	//void write_JPEG_file(char * data, AVFrame * curFrame, int quality);
-	void write_JPEG_file(unsigned char * dest, unsigned char * src, int stride, int quality);
+	int write_JPEG_file(unsigned char * dest, unsigned char * src, int stride, int quality);
 
 public:
 
@@ -45,7 +45,7 @@ public:
 	void Finalize();
 
 	//void Write(char * dest, AVFrame * src, int quality);
-	void Write(char * dest, char * src, int stride, int quality);
+	int Write(char * dest, char * src, int stride, int quality);
 };
 
 

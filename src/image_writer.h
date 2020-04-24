@@ -25,7 +25,7 @@ public:
 	virtual void Initialize();
 	virtual void Initialize(int image_width, int image_height)=0;
 	virtual void Finalize()=0;
-	virtual void Write(char * dest, char * src, int stride, int quality) {};
+	virtual int Write(char * dest, char * src, int stride, int quality)=0;
 	void SetMaxDataSize(int w, int h, int ch);
 	void SetMaxDataSize(int w, int h);
 	int GetMaxDataSize() const;

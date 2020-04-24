@@ -8,12 +8,16 @@
 #ifndef SRC_STREAM_SOURCE_H_
 #define SRC_STREAM_SOURCE_H_
 
+#include "CStreamer.h"
+
 class StreamSource {
+
+protected:
 	int width;
 	int height;
-
+	CStreamer * streamer;
 public:
-	StreamSource(int width, int height);
+	StreamSource(int width, int height, CStreamer * streamer);
 };
 
 

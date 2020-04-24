@@ -10,7 +10,8 @@
 
 #include <string>
 #include <exception>
-
+#include <sstream>
+#include <string.h>
 
 #define THROW(exceptionClass, message) throw exceptionClass(__FILE__, \
 __LINE__, (message) )

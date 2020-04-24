@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named server
+# Target rules for targets named mjepg_maker
 
 # Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 server
-.PHONY : server
+mjepg_maker: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mjepg_maker
+.PHONY : mjepg_maker
 
 # fast build rule for target.
-server/fast:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-.PHONY : server/fast
+mjepg_maker/fast:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/build
+.PHONY : mjepg_maker/fast
 
 src/CRtspSession.o: src/CRtspSession.cpp.o
 
@@ -129,7 +129,7 @@ src/CRtspSession.o: src/CRtspSession.cpp.o
 
 # target to build an object file
 src/CRtspSession.cpp.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/CRtspSession.cpp.o
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/CRtspSession.cpp.o
 .PHONY : src/CRtspSession.cpp.o
 
 src/CRtspSession.i: src/CRtspSession.cpp.i
@@ -138,7 +138,7 @@ src/CRtspSession.i: src/CRtspSession.cpp.i
 
 # target to preprocess a source file
 src/CRtspSession.cpp.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/CRtspSession.cpp.i
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/CRtspSession.cpp.i
 .PHONY : src/CRtspSession.cpp.i
 
 src/CRtspSession.s: src/CRtspSession.cpp.s
@@ -147,7 +147,7 @@ src/CRtspSession.s: src/CRtspSession.cpp.s
 
 # target to generate assembly for a file
 src/CRtspSession.cpp.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/CRtspSession.cpp.s
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/CRtspSession.cpp.s
 .PHONY : src/CRtspSession.cpp.s
 
 src/CStreamer.o: src/CStreamer.cpp.o
@@ -156,7 +156,7 @@ src/CStreamer.o: src/CStreamer.cpp.o
 
 # target to build an object file
 src/CStreamer.cpp.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/CStreamer.cpp.o
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/CStreamer.cpp.o
 .PHONY : src/CStreamer.cpp.o
 
 src/CStreamer.i: src/CStreamer.cpp.i
@@ -165,7 +165,7 @@ src/CStreamer.i: src/CStreamer.cpp.i
 
 # target to preprocess a source file
 src/CStreamer.cpp.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/CStreamer.cpp.i
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/CStreamer.cpp.i
 .PHONY : src/CStreamer.cpp.i
 
 src/CStreamer.s: src/CStreamer.cpp.s
@@ -174,7 +174,7 @@ src/CStreamer.s: src/CStreamer.cpp.s
 
 # target to generate assembly for a file
 src/CStreamer.cpp.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/CStreamer.cpp.s
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/CStreamer.cpp.s
 .PHONY : src/CStreamer.cpp.s
 
 src/JPEGSamples.o: src/JPEGSamples.cpp.o
@@ -183,7 +183,7 @@ src/JPEGSamples.o: src/JPEGSamples.cpp.o
 
 # target to build an object file
 src/JPEGSamples.cpp.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/JPEGSamples.cpp.o
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEGSamples.cpp.o
 .PHONY : src/JPEGSamples.cpp.o
 
 src/JPEGSamples.i: src/JPEGSamples.cpp.i
@@ -192,7 +192,7 @@ src/JPEGSamples.i: src/JPEGSamples.cpp.i
 
 # target to preprocess a source file
 src/JPEGSamples.cpp.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/JPEGSamples.cpp.i
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEGSamples.cpp.i
 .PHONY : src/JPEGSamples.cpp.i
 
 src/JPEGSamples.s: src/JPEGSamples.cpp.s
@@ -201,7 +201,7 @@ src/JPEGSamples.s: src/JPEGSamples.cpp.s
 
 # target to generate assembly for a file
 src/JPEGSamples.cpp.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/JPEGSamples.cpp.s
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEGSamples.cpp.s
 .PHONY : src/JPEGSamples.cpp.s
 
 src/JPEG_Test.o: src/JPEG_Test.cpp.o
@@ -210,7 +210,7 @@ src/JPEG_Test.o: src/JPEG_Test.cpp.o
 
 # target to build an object file
 src/JPEG_Test.cpp.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/JPEG_Test.cpp.o
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEG_Test.cpp.o
 .PHONY : src/JPEG_Test.cpp.o
 
 src/JPEG_Test.i: src/JPEG_Test.cpp.i
@@ -219,7 +219,7 @@ src/JPEG_Test.i: src/JPEG_Test.cpp.i
 
 # target to preprocess a source file
 src/JPEG_Test.cpp.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/JPEG_Test.cpp.i
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEG_Test.cpp.i
 .PHONY : src/JPEG_Test.cpp.i
 
 src/JPEG_Test.s: src/JPEG_Test.cpp.s
@@ -228,7 +228,7 @@ src/JPEG_Test.s: src/JPEG_Test.cpp.s
 
 # target to generate assembly for a file
 src/JPEG_Test.cpp.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/JPEG_Test.cpp.s
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEG_Test.cpp.s
 .PHONY : src/JPEG_Test.cpp.s
 
 src/JPEG_Write.o: src/JPEG_Write.cpp.o
@@ -237,7 +237,7 @@ src/JPEG_Write.o: src/JPEG_Write.cpp.o
 
 # target to build an object file
 src/JPEG_Write.cpp.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/JPEG_Write.cpp.o
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEG_Write.cpp.o
 .PHONY : src/JPEG_Write.cpp.o
 
 src/JPEG_Write.i: src/JPEG_Write.cpp.i
@@ -246,7 +246,7 @@ src/JPEG_Write.i: src/JPEG_Write.cpp.i
 
 # target to preprocess a source file
 src/JPEG_Write.cpp.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/JPEG_Write.cpp.i
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEG_Write.cpp.i
 .PHONY : src/JPEG_Write.cpp.i
 
 src/JPEG_Write.s: src/JPEG_Write.cpp.s
@@ -255,7 +255,7 @@ src/JPEG_Write.s: src/JPEG_Write.cpp.s
 
 # target to generate assembly for a file
 src/JPEG_Write.cpp.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/JPEG_Write.cpp.s
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/JPEG_Write.cpp.s
 .PHONY : src/JPEG_Write.cpp.s
 
 src/client_handler.o: src/client_handler.cpp.o
@@ -264,7 +264,7 @@ src/client_handler.o: src/client_handler.cpp.o
 
 # target to build an object file
 src/client_handler.cpp.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/client_handler.cpp.o
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/client_handler.cpp.o
 .PHONY : src/client_handler.cpp.o
 
 src/client_handler.i: src/client_handler.cpp.i
@@ -273,7 +273,7 @@ src/client_handler.i: src/client_handler.cpp.i
 
 # target to preprocess a source file
 src/client_handler.cpp.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/client_handler.cpp.i
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/client_handler.cpp.i
 .PHONY : src/client_handler.cpp.i
 
 src/client_handler.s: src/client_handler.cpp.s
@@ -282,8 +282,62 @@ src/client_handler.s: src/client_handler.cpp.s
 
 # target to generate assembly for a file
 src/client_handler.cpp.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/client_handler.cpp.s
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/client_handler.cpp.s
 .PHONY : src/client_handler.cpp.s
+
+src/fake_source.o: src/fake_source.cpp.o
+
+.PHONY : src/fake_source.o
+
+# target to build an object file
+src/fake_source.cpp.o:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o
+.PHONY : src/fake_source.cpp.o
+
+src/fake_source.i: src/fake_source.cpp.i
+
+.PHONY : src/fake_source.i
+
+# target to preprocess a source file
+src/fake_source.cpp.i:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.i
+.PHONY : src/fake_source.cpp.i
+
+src/fake_source.s: src/fake_source.cpp.s
+
+.PHONY : src/fake_source.s
+
+# target to generate assembly for a file
+src/fake_source.cpp.s:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.s
+.PHONY : src/fake_source.cpp.s
+
+src/mjepg_maker.o: src/mjepg_maker.cpp.o
+
+.PHONY : src/mjepg_maker.o
+
+# target to build an object file
+src/mjepg_maker.cpp.o:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/mjepg_maker.cpp.o
+.PHONY : src/mjepg_maker.cpp.o
+
+src/mjepg_maker.i: src/mjepg_maker.cpp.i
+
+.PHONY : src/mjepg_maker.i
+
+# target to preprocess a source file
+src/mjepg_maker.cpp.i:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/mjepg_maker.cpp.i
+.PHONY : src/mjepg_maker.cpp.i
+
+src/mjepg_maker.s: src/mjepg_maker.cpp.s
+
+.PHONY : src/mjepg_maker.s
+
+# target to generate assembly for a file
+src/mjepg_maker.cpp.s:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/mjepg_maker.cpp.s
+.PHONY : src/mjepg_maker.cpp.s
 
 src/mjpeg_tester.o: src/mjpeg_tester.cpp.o
 
@@ -291,7 +345,7 @@ src/mjpeg_tester.o: src/mjpeg_tester.cpp.o
 
 # target to build an object file
 src/mjpeg_tester.cpp.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/mjpeg_tester.cpp.o
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o
 .PHONY : src/mjpeg_tester.cpp.o
 
 src/mjpeg_tester.i: src/mjpeg_tester.cpp.i
@@ -300,7 +354,7 @@ src/mjpeg_tester.i: src/mjpeg_tester.cpp.i
 
 # target to preprocess a source file
 src/mjpeg_tester.cpp.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/mjpeg_tester.cpp.i
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.i
 .PHONY : src/mjpeg_tester.cpp.i
 
 src/mjpeg_tester.s: src/mjpeg_tester.cpp.s
@@ -309,35 +363,35 @@ src/mjpeg_tester.s: src/mjpeg_tester.cpp.s
 
 # target to generate assembly for a file
 src/mjpeg_tester.cpp.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/mjpeg_tester.cpp.s
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.s
 .PHONY : src/mjpeg_tester.cpp.s
 
-src/server.o: src/server.cpp.o
+src/stream_source.o: src/stream_source.cpp.o
 
-.PHONY : src/server.o
+.PHONY : src/stream_source.o
 
 # target to build an object file
-src/server.cpp.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.o
-.PHONY : src/server.cpp.o
+src/stream_source.cpp.o:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o
+.PHONY : src/stream_source.cpp.o
 
-src/server.i: src/server.cpp.i
+src/stream_source.i: src/stream_source.cpp.i
 
-.PHONY : src/server.i
+.PHONY : src/stream_source.i
 
 # target to preprocess a source file
-src/server.cpp.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.i
-.PHONY : src/server.cpp.i
+src/stream_source.cpp.i:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.i
+.PHONY : src/stream_source.cpp.i
 
-src/server.s: src/server.cpp.s
+src/stream_source.s: src/stream_source.cpp.s
 
-.PHONY : src/server.s
+.PHONY : src/stream_source.s
 
 # target to generate assembly for a file
-src/server.cpp.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.s
-.PHONY : src/server.cpp.s
+src/stream_source.cpp.s:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.s
+.PHONY : src/stream_source.cpp.s
 
 # Help Target
 help:
@@ -346,7 +400,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... server"
+	@echo "... mjepg_maker"
 	@echo "... edit_cache"
 	@echo "... src/CRtspSession.o"
 	@echo "... src/CRtspSession.i"
@@ -366,12 +420,18 @@ help:
 	@echo "... src/client_handler.o"
 	@echo "... src/client_handler.i"
 	@echo "... src/client_handler.s"
+	@echo "... src/fake_source.o"
+	@echo "... src/fake_source.i"
+	@echo "... src/fake_source.s"
+	@echo "... src/mjepg_maker.o"
+	@echo "... src/mjepg_maker.i"
+	@echo "... src/mjepg_maker.s"
 	@echo "... src/mjpeg_tester.o"
 	@echo "... src/mjpeg_tester.i"
 	@echo "... src/mjpeg_tester.s"
-	@echo "... src/server.o"
-	@echo "... src/server.i"
-	@echo "... src/server.s"
+	@echo "... src/stream_source.o"
+	@echo "... src/stream_source.i"
+	@echo "... src/stream_source.s"
 .PHONY : help
 
 

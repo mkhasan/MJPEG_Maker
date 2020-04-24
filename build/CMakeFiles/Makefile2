@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /home/hasan/hdd/mjpeg_maker
 CMAKE_BINARY_DIR = /home/hasan/hdd/mjpeg_maker/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/server.dir
+# Target rules for target CMakeFiles/mjepg_maker.dir
 
 # All Build rule for target.
-CMakeFiles/server.dir/all:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/depend
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target server"
-.PHONY : CMakeFiles/server.dir/all
+CMakeFiles/mjepg_maker.dir/all:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/depend
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target mjepg_maker"
+.PHONY : CMakeFiles/mjepg_maker.dir/all
 
 # Include target in all.
-all: CMakeFiles/server.dir/all
+all: CMakeFiles/mjepg_maker.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hasan/hdd/mjpeg_maker/build/CMakeFiles 9
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/server.dir/all
+CMakeFiles/mjepg_maker.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hasan/hdd/mjpeg_maker/build/CMakeFiles 11
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mjepg_maker.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hasan/hdd/mjpeg_maker/build/CMakeFiles 0
-.PHONY : CMakeFiles/server.dir/rule
+.PHONY : CMakeFiles/mjepg_maker.dir/rule
 
 # Convenience name for target.
-server: CMakeFiles/server.dir/rule
+mjepg_maker: CMakeFiles/mjepg_maker.dir/rule
 
-.PHONY : server
-
-# clean rule for target.
-CMakeFiles/server.dir/clean:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/clean
-.PHONY : CMakeFiles/server.dir/clean
+.PHONY : mjepg_maker
 
 # clean rule for target.
-clean: CMakeFiles/server.dir/clean
+CMakeFiles/mjepg_maker.dir/clean:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/clean
+.PHONY : CMakeFiles/mjepg_maker.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/mjepg_maker.dir/clean
 
 .PHONY : clean
 

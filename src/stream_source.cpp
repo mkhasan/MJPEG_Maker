@@ -7,7 +7,11 @@
 
 #include "stream_source.h"
 
-StreamSource::StreamSource(int _width, int _height) : width(_width), height(_height) {
+StreamSource::StreamSource(int _width, int _height, CStreamer * _streamer)
+	: width(_width)
+	, height(_height)
+	, streamer(_streamer)
+{
 
 }
 

@@ -177,9 +177,33 @@ CMakeFiles/mjepg_maker.dir/src/CRtspSession.cpp.o.provides: CMakeFiles/mjepg_mak
 CMakeFiles/mjepg_maker.dir/src/CRtspSession.cpp.o.provides.build: CMakeFiles/mjepg_maker.dir/src/CRtspSession.cpp.o
 
 
+CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o: CMakeFiles/mjepg_maker.dir/flags.make
+CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o: ../src/image_writer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o -c /home/hasan/hdd/mjpeg_maker/src/image_writer.cpp
+
+CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hasan/hdd/mjpeg_maker/src/image_writer.cpp > CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.i
+
+CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hasan/hdd/mjpeg_maker/src/image_writer.cpp -o CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.s
+
+CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o.requires:
+
+.PHONY : CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o.requires
+
+CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o.provides: CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o.provides.build
+.PHONY : CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o.provides
+
+CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o.provides.build: CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o
+
+
 CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: CMakeFiles/mjepg_maker.dir/flags.make
 CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: ../src/jpeg_writer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o -c /home/hasan/hdd/mjpeg_maker/src/jpeg_writer.cpp
 
 CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o.provides.build: CMakeFiles/mjep
 
 CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o: CMakeFiles/mjepg_maker.dir/flags.make
 CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o: ../src/mjpeg_tester.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o -c /home/hasan/hdd/mjpeg_maker/src/mjpeg_tester.cpp
 
 CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.i: cmake_force
@@ -227,7 +251,7 @@ CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o.provides.build: CMakeFiles/mje
 
 CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o: CMakeFiles/mjepg_maker.dir/flags.make
 CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o: ../src/stream_source.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o -c /home/hasan/hdd/mjpeg_maker/src/stream_source.cpp
 
 CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.i: cmake_force
@@ -251,7 +275,7 @@ CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o.provides.build: CMakeFiles/mj
 
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: CMakeFiles/mjepg_maker.dir/flags.make
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: ../src/fake_source.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o -c /home/hasan/hdd/mjpeg_maker/src/fake_source.cpp
 
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.i: cmake_force
@@ -280,6 +304,7 @@ mjepg_maker_OBJECTS = \
 "CMakeFiles/mjepg_maker.dir/src/CStreamer.cpp.o" \
 "CMakeFiles/mjepg_maker.dir/src/JPEGSamples.cpp.o" \
 "CMakeFiles/mjepg_maker.dir/src/CRtspSession.cpp.o" \
+"CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o" \
 "CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o" \
 "CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o" \
 "CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o" \
@@ -293,13 +318,14 @@ mjepg_maker_EXTERNAL_OBJECTS =
 ../bin/mjepg_maker: CMakeFiles/mjepg_maker.dir/src/CStreamer.cpp.o
 ../bin/mjepg_maker: CMakeFiles/mjepg_maker.dir/src/JPEGSamples.cpp.o
 ../bin/mjepg_maker: CMakeFiles/mjepg_maker.dir/src/CRtspSession.cpp.o
+../bin/mjepg_maker: CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o
 ../bin/mjepg_maker: CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o
 ../bin/mjepg_maker: CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o
 ../bin/mjepg_maker: CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o
 ../bin/mjepg_maker: CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o
 ../bin/mjepg_maker: CMakeFiles/mjepg_maker.dir/build.make
 ../bin/mjepg_maker: CMakeFiles/mjepg_maker.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable ../bin/mjepg_maker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable ../bin/mjepg_maker"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mjepg_maker.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -312,6 +338,7 @@ CMakeFiles/mjepg_maker.dir/requires: CMakeFiles/mjepg_maker.dir/src/client_handl
 CMakeFiles/mjepg_maker.dir/requires: CMakeFiles/mjepg_maker.dir/src/CStreamer.cpp.o.requires
 CMakeFiles/mjepg_maker.dir/requires: CMakeFiles/mjepg_maker.dir/src/JPEGSamples.cpp.o.requires
 CMakeFiles/mjepg_maker.dir/requires: CMakeFiles/mjepg_maker.dir/src/CRtspSession.cpp.o.requires
+CMakeFiles/mjepg_maker.dir/requires: CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o.requires
 CMakeFiles/mjepg_maker.dir/requires: CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o.requires
 CMakeFiles/mjepg_maker.dir/requires: CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o.requires
 CMakeFiles/mjepg_maker.dir/requires: CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o.requires

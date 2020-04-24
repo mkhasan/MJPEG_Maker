@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/hasan/hdd/mjpeg_maker/build
 CMakeFiles/mjepg_maker.dir/all:
 	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/depend
 	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target mjepg_maker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hasan/hdd/mjpeg_maker/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target mjepg_maker"
 .PHONY : CMakeFiles/mjepg_maker.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/mjepg_maker.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mjepg_maker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hasan/hdd/mjpeg_maker/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hasan/hdd/mjpeg_maker/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mjepg_maker.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hasan/hdd/mjpeg_maker/build/CMakeFiles 0
 .PHONY : CMakeFiles/mjepg_maker.dir/rule

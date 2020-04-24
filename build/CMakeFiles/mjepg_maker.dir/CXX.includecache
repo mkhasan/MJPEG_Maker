@@ -114,9 +114,21 @@ stream_source.h
 string
 -
 
+/home/hasan/hdd/mjpeg_maker/src/image_writer.cpp
+image_writer.h
+/home/hasan/hdd/mjpeg_maker/src/image_writer.h
+
+/home/hasan/hdd/mjpeg_maker/src/image_writer.h
+
 /home/hasan/hdd/mjpeg_maker/src/jpeg_writer.cpp
 jpeg_writer.h
 /home/hasan/hdd/mjpeg_maker/src/jpeg_writer.h
+string.h
+-
+utils.h
+/home/hasan/hdd/mjpeg_maker/src/utils.h
+config.h
+/home/hasan/hdd/mjpeg_maker/src/config.h
 
 /home/hasan/hdd/mjpeg_maker/src/jpeg_writer.h
 stdlib.h
@@ -125,8 +137,8 @@ stdio.h
 -
 jpeglib.h
 -
-libavutil/frame.h
--
+image_writer.h
+/home/hasan/hdd/mjpeg_maker/src/image_writer.h
 
 /home/hasan/hdd/mjpeg_maker/src/mjepg_maker.cpp
 ace/Signal.h
@@ -147,6 +159,10 @@ string.h
 /home/hasan/hdd/mjpeg_maker/src/stream_source.cpp
 stream_source.h
 /home/hasan/hdd/mjpeg_maker/src/stream_source.h
+config.h
+/home/hasan/hdd/mjpeg_maker/src/config.h
+new
+-
 
 /home/hasan/hdd/mjpeg_maker/src/stream_source.h
 CStreamer.h

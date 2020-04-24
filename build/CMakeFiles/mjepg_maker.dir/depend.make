@@ -28,6 +28,7 @@ CMakeFiles/mjepg_maker.dir/src/client_handler.cpp.o: ../src/stream_source.h
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: ../src/CStreamer.h
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: ../src/fake_source.cpp
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: ../src/fake_source.h
+CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: ../src/image_writer.h
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: ../src/jpeg_writer.h
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: ../src/stream_source.h
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: ../src/utils.h
@@ -58,25 +59,14 @@ CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: /usr/local/include/libavutil/s
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: /usr/local/include/libavutil/version.h
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: /usr/local/include/libswscale/swscale.h
 
+CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o: ../src/image_writer.cpp
+CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o: ../src/image_writer.h
+
+CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: ../src/config.h
+CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: ../src/image_writer.h
 CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: ../src/jpeg_writer.cpp
 CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: ../src/jpeg_writer.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/attributes.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/avconfig.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/avutil.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/buffer.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/common.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/dict.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/error.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/frame.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/intfloat.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/log.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/macros.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/mathematics.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/mem.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/pixfmt.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/rational.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/samplefmt.h
-CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: /usr/local/include/libavutil/version.h
+CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o: ../src/utils.h
 
 CMakeFiles/mjepg_maker.dir/src/mjepg_maker.cpp.o: ../src/client_acceptor.h
 CMakeFiles/mjepg_maker.dir/src/mjepg_maker.cpp.o: ../src/client_handler.h
@@ -85,6 +75,7 @@ CMakeFiles/mjepg_maker.dir/src/mjepg_maker.cpp.o: ../src/mjepg_maker.cpp
 CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o: ../src/mjpeg_tester.cpp
 
 CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o: ../src/CStreamer.h
+CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o: ../src/config.h
 CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o: ../src/stream_source.cpp
 CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o: ../src/stream_source.h
 

@@ -13,9 +13,11 @@
 
 class FakeSource : public StreamSource {
 
-	const int WIDTH = 520;
-	const int HEIGHT = 274;
+public:
+	static const int WIDTH = 520;
+	static const int HEIGHT = 274;
 
+private:
 	const static std::string filename;
 	bool quit;
 	pthread_t tid;

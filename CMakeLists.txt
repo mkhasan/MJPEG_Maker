@@ -24,6 +24,7 @@ set ( SRC
 	src/JPEGSamples.cpp
 	src/CRtspSession.cpp
 	#src/JPEG_Write.cpp
+	src/image_writer.cpp
 	src/jpeg_writer.cpp
 	src/mjpeg_tester.cpp
 	src/stream_source.cpp

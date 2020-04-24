@@ -37,9 +37,9 @@ CStreamer::CStreamer(Client_Handler *_aClientHandler)
     m_SendIdx        = 0;
     m_TCPTransport   = false;
 
-    data = new (nothrow) char[MAX_DATA_SIZE];
+    //data = new (nothrow) char[MAX_DATA_SIZE];
 
-    assert(data);
+
     //this->activate();
 };
 
@@ -50,7 +50,9 @@ CStreamer::~CStreamer()
     m_RtpSocket.close();
     m_RtcpSocket.close();
 
-    delete[] data;
+    //delete[] data;
+
+    // do no allocate or deallocate this data...StreamSource is responsible for that
 
     cout << "in destructor " << endl;
 };

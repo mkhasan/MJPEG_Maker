@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hasan/hdd/mjpeg_maker/src/JPEGSamples.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/JPEGSamples.cpp.o"
   "/home/hasan/hdd/mjpeg_maker/src/client_handler.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/client_handler.cpp.o"
   "/home/hasan/hdd/mjpeg_maker/src/fake_source.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o"
+  "/home/hasan/hdd/mjpeg_maker/src/image_writer.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o"
   "/home/hasan/hdd/mjpeg_maker/src/jpeg_writer.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o"
   "/home/hasan/hdd/mjpeg_maker/src/mjepg_maker.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/mjepg_maker.cpp.o"
   "/home/hasan/hdd/mjpeg_maker/src/mjpeg_tester.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o"

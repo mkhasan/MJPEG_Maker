@@ -49,7 +49,7 @@ finalize_JPEG ();
 
 */
 
-JPEG_Writer writer;
+ImageWriter * writer;
 
 
 FakeSource::FakeSource(CStreamer * streamer) : StreamSource(WIDTH, HEIGHT, streamer), quit(false), tid(NULL)
@@ -179,9 +179,13 @@ void * FakeSource::stream_generator(void * arg) {
 	// Read frames and save first five frames to disk
 
 	//init_JPEG();
-	writer.Initialize(520, 274);
+
 
 	printf("before data read\n");
+
+	writer = new JPEG_Writer(FakeSource::WIDTH, FakeSource::HEIGHT);
+
+	writer->Initialize();
 
 	while(av_read_frame(pFormatCtx, &packet)>=0 && (info->streamer->finished == 0) && *(info->quit) == false) {
 
@@ -228,14 +232,15 @@ void * FakeSource::stream_generator(void * arg) {
 	}
 
 	*(info->quit) = true;
+	delete writer;
 	return NULL;
 }
 
-JSAMPLE * image_buffer;	/* Points to large array of R,G,B-order data */
-int image_height;	/* Number of rows in image */
-int image_width;		/* Number of columns in image */
+//JSAMPLE * image_buffer;	/* Points to large array of R,G,B-order data */
+//int image_height;	/* Number of rows in image */
+//int image_width;		/* Number of columns in image */
 
-AVFrame *curFrame;
+//AVFrame *curFrame;
 
 void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor) {
   FILE *pFile;
@@ -245,11 +250,11 @@ void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, 
 
   if (iFrame == 1)
   {
-	  curFrame = pFrame;
-	  image_height = height;
-	  image_width = width;
+	  //curFrame = pFrame;
+	  //image_height = height;
+	  //image_width = width;
 	  //write_JPEG_file(data, qualityFactor);
-	  writer.Write(data, pFrame, qualityFactor);
+	  writer->Write(data, (char *)pFrame->data[0], pFrame->linesize[0], qualityFactor);
 
   }
 

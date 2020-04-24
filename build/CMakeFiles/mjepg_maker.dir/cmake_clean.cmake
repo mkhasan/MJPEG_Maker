@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mjepg_maker.dir/src/CStreamer.cpp.o"
   "CMakeFiles/mjepg_maker.dir/src/JPEGSamples.cpp.o"
   "CMakeFiles/mjepg_maker.dir/src/CRtspSession.cpp.o"
+  "CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o"
   "CMakeFiles/mjepg_maker.dir/src/jpeg_writer.cpp.o"
   "CMakeFiles/mjepg_maker.dir/src/mjpeg_tester.cpp.o"
   "CMakeFiles/mjepg_maker.dir/src/stream_source.cpp.o"

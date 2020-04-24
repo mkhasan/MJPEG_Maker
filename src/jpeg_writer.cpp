@@ -8,6 +8,11 @@
 
 
 #include "jpeg_writer.h"
+#include <string.h>
+
+#include "utils.h"
+
+using namespace mjpeg_maker;
 
 struct jpeg_compress_struct cinfo;
 struct jpeg_error_mgr jerr;
@@ -36,9 +41,17 @@ JPEG_Writer::finalize_JPEG()
 	jpeg_destroy_compress(&cinfo);
 }
 
+/*
+void JPEG_Writer::write_JPEG_file(char * data, AVFrame * curFrame, int quality) {
+
+}
+
+*/
+
+#include "config.h"
 
 void
-JPEG_Writer::write_JPEG_file(char * data, AVFrame * curFrame, int quality)
+JPEG_Writer::write_JPEG_file(unsigned char * dest, unsigned char * src, int stride, int quality)
 {
 	FILE * outfile;
 
@@ -54,9 +67,10 @@ JPEG_Writer::write_JPEG_file(char * data, AVFrame * curFrame, int quality)
 
 		*/
 
-	memset(data, 0, maxDataSize);
+	int size = GetMaxDataSize();
+	memset(dest, 0, size);
 
-	if ((outfile = fmemopen(data, MAX_DATA_SIZE, "wb")) == NULL) {
+	if ((outfile = fmemopen(dest, size, "wb")) == NULL) {
 			fprintf(stderr, "can't open %s\n", "mem file");
 			exit(1);
 		}
@@ -83,8 +97,8 @@ JPEG_Writer::write_JPEG_file(char * data, AVFrame * curFrame, int quality)
 
 	int y=0;
 	while (cinfo.next_scanline < cinfo.image_height) {
-
-		row_pointer[0] = curFrame->data[0]+y*curFrame->linesize[0];////& image_buffer[cinfo.next_scanline * row_stride];
+		/* row_pointer[0] = curFrame->data[0]+y*curFrame->linesize[0];////& image_buffer[cinfo.next_scanline * row_stride]; */
+		row_pointer[0] = &src[y*stride];////& image_buffer[cinfo.next_scanline * row_stride];
 		(void) jpeg_write_scanlines(&cinfo, row_pointer, 1);
 
 		y++;
@@ -106,11 +120,8 @@ JPEG_Writer::write_JPEG_file(char * data, AVFrame * curFrame, int quality)
 
 
 
-JPEG_Writer::JPEG_Writer(int _maxDataSize)
-	: isInitialized(false)
-	, maxDataSize(_maxDataSize)
-	, image_width(0)
-	, image_height(0)
+JPEG_Writer::JPEG_Writer(int _image_width, int _image_height)
+	: ImageWriter(_image_width, _image_height)
 
 {
 
@@ -130,8 +141,14 @@ void JPEG_Writer::Initialize(int _image_width, int _image_height) {
 
 	}
 
+	if (_image_width == 0 || _image_height == 0 || channel == 0) {
+		THROW(RobotException,"Error in initialization");
+	}
+
 	image_width = _image_width;
 	image_height = _image_height;
+
+	SetMaxDataSize(image_width, image_height);
 
 	init_JPEG();
 
@@ -144,6 +161,12 @@ void JPEG_Writer::Finalize() {
 	finalize_JPEG();
 }
 
+void JPEG_Writer::Write(char * dest, char * src, int stride, int quality) {
+	write_JPEG_file((unsigned char *) dest, (unsigned char *) src, stride, quality);
+}
+
+/*
 void JPEG_Writer::Write(char * dest, AVFrame * src, int quality) {
 	write_JPEG_file(dest, src, quality);
 }
+*/

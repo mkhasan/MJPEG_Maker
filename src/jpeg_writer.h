@@ -17,34 +17,35 @@ extern "C" {
 #endif
 
 #include <jpeglib.h>
-#include <libavutil/frame.h>
+
 
 #ifdef __cplusplus
 }
 #endif
 
-class JPEG_Writer {
+#include "image_writer.h"
+
+
+class JPEG_Writer : public ImageWriter {
 
 	bool isInitialized;
-	const static int MAX_DATA_SIZE = 163840;
-	int maxDataSize;
 
-	int image_width;
-	int image_height;
 
 	void init_JPEG();
 	void finalize_JPEG();
-	void write_JPEG_file(char * data, AVFrame * curFrame, int quality);
+	//void write_JPEG_file(char * data, AVFrame * curFrame, int quality);
+	void write_JPEG_file(unsigned char * dest, unsigned char * src, int stride, int quality);
 
 public:
 
-	JPEG_Writer(int maxDataSize = MAX_DATA_SIZE);
+	JPEG_Writer(int image_width, int image_heigt);
 	~JPEG_Writer();
 
 	void Initialize(int image_width, int image_height);
 	void Finalize();
 
-	void Write(char * dest, AVFrame * src, int quality);
+	//void Write(char * dest, AVFrame * src, int quality);
+	void Write(char * dest, char * src, int stride, int quality);
 };
 
 

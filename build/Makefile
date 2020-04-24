@@ -258,6 +258,33 @@ src/fake_source.cpp.s:
 	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.s
 .PHONY : src/fake_source.cpp.s
 
+src/image_writer.o: src/image_writer.cpp.o
+
+.PHONY : src/image_writer.o
+
+# target to build an object file
+src/image_writer.cpp.o:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.o
+.PHONY : src/image_writer.cpp.o
+
+src/image_writer.i: src/image_writer.cpp.i
+
+.PHONY : src/image_writer.i
+
+# target to preprocess a source file
+src/image_writer.cpp.i:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.i
+.PHONY : src/image_writer.cpp.i
+
+src/image_writer.s: src/image_writer.cpp.s
+
+.PHONY : src/image_writer.s
+
+# target to generate assembly for a file
+src/image_writer.cpp.s:
+	$(MAKE) -f CMakeFiles/mjepg_maker.dir/build.make CMakeFiles/mjepg_maker.dir/src/image_writer.cpp.s
+.PHONY : src/image_writer.cpp.s
+
 src/jpeg_writer.o: src/jpeg_writer.cpp.o
 
 .PHONY : src/jpeg_writer.o
@@ -390,6 +417,9 @@ help:
 	@echo "... src/fake_source.o"
 	@echo "... src/fake_source.i"
 	@echo "... src/fake_source.s"
+	@echo "... src/image_writer.o"
+	@echo "... src/image_writer.i"
+	@echo "... src/image_writer.s"
 	@echo "... src/jpeg_writer.o"
 	@echo "... src/jpeg_writer.i"
 	@echo "... src/jpeg_writer.s"

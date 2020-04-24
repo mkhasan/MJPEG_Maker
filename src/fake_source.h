@@ -29,6 +29,7 @@ public:
 	} info;
 
 	FakeSource(CStreamer * streamer);
+	~FakeSource();
 	static void * stream_generator(void * arg);
 
 };

@@ -129,6 +129,16 @@ fake_source.h
 /home/hasan/hdd/mjpeg_maker/src/fake_source.h
 pthread.h
 -
+unistd.h
+-
+jpeglib.h
+-
+libavcodec/avcodec.h
+-
+libavformat/avformat.h
+-
+libswscale/swscale.h
+-
 
 /home/hasan/hdd/mjpeg_maker/src/fake_source.h
 stream_source.h

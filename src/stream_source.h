@@ -18,6 +18,7 @@ protected:
 	CStreamer * streamer;
 public:
 	StreamSource(int width, int height, CStreamer * streamer);
+	virtual ~StreamSource();
 };
 
 

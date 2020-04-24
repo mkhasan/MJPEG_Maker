@@ -15,5 +15,9 @@ StreamSource::StreamSource(int _width, int _height, CStreamer * _streamer)
 
 }
 
+StreamSource::~StreamSource() {
+	printf("In StreamSource Destructor \n");
+}
+
 
 

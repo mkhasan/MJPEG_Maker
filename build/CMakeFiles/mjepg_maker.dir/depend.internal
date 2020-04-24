@@ -73,6 +73,8 @@ CMakeFiles/mjepg_maker.dir/src/client_handler.cpp.o
  /home/hasan/hdd/mjpeg_maker/src/client_acceptor.h
  /home/hasan/hdd/mjpeg_maker/src/client_handler.cpp
  /home/hasan/hdd/mjpeg_maker/src/client_handler.h
+ /home/hasan/hdd/mjpeg_maker/src/fake_source.h
+ /home/hasan/hdd/mjpeg_maker/src/stream_source.h
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o
  /home/hasan/hdd/mjpeg_maker/src/CStreamer.h
  /home/hasan/hdd/mjpeg_maker/src/fake_source.cpp

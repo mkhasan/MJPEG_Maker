@@ -113,6 +113,8 @@ CStreamer.h
 /home/hasan/hdd/mjpeg_maker/src/CStreamer.h
 CRtspSession.h
 /home/hasan/hdd/mjpeg_maker/src/CRtspSession.h
+fake_source.h
+/home/hasan/hdd/mjpeg_maker/src/fake_source.h
 
 /home/hasan/hdd/mjpeg_maker/src/client_handler.h
 ace/Svc_Handler.h

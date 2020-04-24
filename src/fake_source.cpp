@@ -64,6 +64,8 @@ FakeSource::FakeSource(CStreamer * streamer) : StreamSource(WIDTH, HEIGHT, strea
 }
 
 FakeSource::~FakeSource() {
+
+	printf("In FakeSource Destructor \n");
 	if (tid != NULL && quit == false) {
 		quit = true;
 		pthread_join(tid, NULL);

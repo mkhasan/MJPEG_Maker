@@ -72,6 +72,8 @@ CMakeFiles/mjepg_maker.dir/src/client_handler.cpp.o: ../src/CStreamer.h
 CMakeFiles/mjepg_maker.dir/src/client_handler.cpp.o: ../src/client_acceptor.h
 CMakeFiles/mjepg_maker.dir/src/client_handler.cpp.o: ../src/client_handler.cpp
 CMakeFiles/mjepg_maker.dir/src/client_handler.cpp.o: ../src/client_handler.h
+CMakeFiles/mjepg_maker.dir/src/client_handler.cpp.o: ../src/fake_source.h
+CMakeFiles/mjepg_maker.dir/src/client_handler.cpp.o: ../src/stream_source.h
 
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: ../src/CStreamer.h
 CMakeFiles/mjepg_maker.dir/src/fake_source.cpp.o: ../src/fake_source.cpp

@@ -15,8 +15,12 @@
 #include "client_handler.h"
 #include "CStreamer.h"
 #include "CRtspSession.h"
+#include "fake_source.h"
 
-void * Start(void * arg);
+//void * Start(void * arg);
+
+StreamSource * streamSource;
+
 pthread_t tid;
 
 /* Our constructor doesn't do anything.  That's generally a good idea.
@@ -242,6 +246,7 @@ Client_Handler::svc(void)
 	int err;
 	char *b;
 
+	/*
 	err = pthread_create(&tid, NULL, &Start, (void *) &Streamer);
 	if (err != 0)
 	{
@@ -249,6 +254,9 @@ Client_Handler::svc(void)
 		return -1;
 	}
 
+	*/
+
+	streamSource = new FakeSource(&Streamer);
 
 	//sleep(3);
 
@@ -310,6 +318,7 @@ Client_Handler::svc(void)
 	free(b);
 
 
+	delete streamSource;
 
   return 0;
 }

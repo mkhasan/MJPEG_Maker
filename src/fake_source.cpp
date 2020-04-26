@@ -34,17 +34,21 @@ extern "C" {
 using namespace std;
 using namespace mjpeg_maker;
 
-const string FakeSource::filename = "/media/hasan/External/Movie/IceAge.avi";
+//const string FakeSource::filename = "/media/hasan/External/Movie/IceAge.avi";
 static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor, ImageWriter * writer);
 
 
 
 
-FakeSource::FakeSource(CStreamer * streamer) : StreamSource(WIDTH, HEIGHT, streamer, new JPEG_Writer(WIDTH, HEIGHT)), quit(false), tid(NULL)
+FakeSource::FakeSource(int width, int height, CStreamer * streamer, string f_name)
+	: StreamSource(width, height, streamer, new JPEG_Writer(width, height))
+	, filename(f_name)
+	, quit(false), tid(NULL)
 {
 	info.quit = &quit;
 	info.streamer = streamer;
 	info.writer = writer;
+	info.filename = filename;
 
 	int err = pthread_create(&tid, NULL, &stream_generator, (void *) &info);
 	if (err != 0)
@@ -88,7 +92,7 @@ void * FakeSource::stream_generator(void * arg) {
 
 	av_register_all();
 
-	if(avformat_open_input(&pFormatCtx, filename.c_str(), NULL, NULL)!=0) {
+	if(avformat_open_input(&pFormatCtx, info->filename.c_str(), NULL, NULL)!=0) {
 		fprintf(stderr, "Couldn't open file \n");
 	    return NULL;
 	}
@@ -99,7 +103,7 @@ void * FakeSource::stream_generator(void * arg) {
 		return NULL;
 	}
 
-	av_dump_format(pFormatCtx, 0, filename.c_str(), 0);
+	av_dump_format(pFormatCtx, 0, info->filename.c_str(), 0);
 
 
 	videoStream=-1;
@@ -180,7 +184,7 @@ void * FakeSource::stream_generator(void * arg) {
 
 	while(av_read_frame(pFormatCtx, &packet)>=0 && (info->streamer->finished == 0) && *(info->quit) == false) {
 
-		//printf("data read\n");
+		printf("data read\n");
 	    // Is this a packet from the video stream?
 	    if(packet.stream_index==videoStream) {
 	      // Decode video frame
@@ -207,7 +211,7 @@ void * FakeSource::stream_generator(void * arg) {
 					//SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height,
 						//1, info->streamer->data, (int) info->streamer->GetQualityFactor(), info->writer);
 
-					writer->Write(info->streamer->data, (char *)pFrameRGB->data[0], pFrameRGB->linesize[0], (int) info->streamer->GetQualityFactor());
+					info->writer->Write(info->streamer->data, (char *)pFrameRGB->data[0], pFrameRGB->linesize[0], (int) info->streamer->GetQualityFactor());
 
 					info->streamer->StreamImage(pCodecCtx->width, pCodecCtx->height);
 

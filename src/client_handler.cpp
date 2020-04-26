@@ -251,11 +251,14 @@ Client_Handler::svc(void)
 	char *b;
 
 
+
 	StreamSource * streamSource;
 
+	// 768 × 576
+	// /home/usrc/hdd/opencv/samples/data/vtest.avi
+	//streamSource = new FakeSource(FakeSource::WIDTH, FakeSource::HEIGHT, &Streamer, "/media/hasan/External/Movie/IceAge.avi");
 
-	streamSource = new FakeSource(&Streamer);
-
+	streamSource = new FakeSource(656, 352, &Streamer, "/home/usrc/destination_file.mp4");
 
 
 

@@ -18,7 +18,7 @@ public:
 	static const int HEIGHT = 274;
 
 private:
-	const static std::string filename;
+	const std::string filename;
 	bool quit;
 	pthread_t tid;
 
@@ -29,9 +29,10 @@ public:
 		bool * quit;
 		CStreamer * streamer;
 		ImageWriter * writer;
+		std::string filename;
 	} info;
 
-	FakeSource(CStreamer * streamer);
+	FakeSource(int width, int height, CStreamer * streamer, std::string filename);
 	~FakeSource();
 	static void * stream_generator(void * arg);
 

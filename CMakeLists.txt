@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
-set (APP mjepg_maker)
+project(mjpeg_maker)
+set (APP ${PROJECT_NAME})
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 

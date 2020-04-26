@@ -1,4 +1,4 @@
-# Install script for directory: /home/hasan/hdd/mjpeg_maker
+# Install script for directory: /home/usrc/hdd/mjpeg_maker
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/hasan/hdd/mjpeg_maker/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/usrc/hdd/mjpeg_maker/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -25,10 +25,12 @@ extern "C" {
 #include <libswscale/swscale.h>
 
 
+
 #ifdef __cplusplus
 }
 #endif
 
+#include <assert.h>
 
 
 using namespace std;
@@ -176,6 +178,13 @@ void * FakeSource::stream_generator(void * arg) {
 	//init_JPEG();
 
 
+	int w, h;
+	info->writer->GetDimenstion(w, h);
+
+	if (!(w == pCodecCtx->width && h == pCodecCtx->height)) {
+		printf("(%d x %d) \n", pCodecCtx->width, pCodecCtx->height);
+		assert(w == pCodecCtx->width && h == pCodecCtx->height);
+	}
 	printf("before data read\n");
 
 

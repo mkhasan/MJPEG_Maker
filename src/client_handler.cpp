@@ -258,7 +258,18 @@ Client_Handler::svc(void)
 	// /home/usrc/hdd/opencv/samples/data/vtest.avi
 	//streamSource = new FakeSource(FakeSource::WIDTH, FakeSource::HEIGHT, &Streamer, "/media/hasan/External/Movie/IceAge.avi");
 
-	streamSource = new FakeSource(656, 352, &Streamer, "/home/usrc/destination_file.mp4");
+
+
+	// /media/hasan/External/hdd/water_detection/clips/smoke.mp4 (1920 x 1080)
+
+	//streamSource = new FakeSource(1920, 1080, &Streamer, "/media/hasan/External/hdd/water_detection/clips/smoke.mp4");
+
+	// /media/hasan/External/Movie/IceAge.avi : (520 x 274)
+	//streamSource = new FakeSource(520, 274, &Streamer, "/media/hasan/External/Movie/IceAge.avi");
+
+	// /home/hasan/hdd/vtest.avi : (768 x 576)
+
+	streamSource = new FakeSource(768, 576, &Streamer, "/home/hasan/hdd/vtest.avi");
 
 
 

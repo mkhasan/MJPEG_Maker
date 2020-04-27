@@ -63,7 +63,18 @@ unsigned char CStreamer::GetQualityFactor() {
 }
 
 
-void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height)
+void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height) {
+
+	const int MAX_PAYLOAD_SIZE = 1456;
+
+	int offset = 0;
+	for(int len = JpegLen; len > 0; len -= MAX_PAYLOAD_SIZE, offset += MAX_PAYLOAD_SIZE) {
+		SendRtpPacket(&Jpeg[offset], std::min(len, MAX_PAYLOAD_SIZE), width, height, len <= MAX_PAYLOAD_SIZE, offset);
+		//SendRtpPacket(&Jpeg[len], std::min(len, MAX_PAYLOAD_SIZE), width, height, len <= MAX_PAYLOAD_SIZE, offset);
+	}
+}
+
+void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height, bool isLastPacket, unsigned int offset)
 {
 #define KRtpHeaderSize 12           // size of the RTP header
 #define KJpegHeaderSize 8           // size of the special JPEG payload header
@@ -90,7 +101,10 @@ void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height)
     RtpBuf[3]  = (RtpPacketSize & 0x000000FF);
     // Prepare the 12 byte RTP header
     RtpBuf[4]  = 0x80;                               // RTP version
-    RtpBuf[5]  = 0x9a;                               // JPEG payload (26) and marker bit
+    if (isLastPacket)								 // JPEG payload (26) and marker bit
+    	RtpBuf[5] = 0x9a;
+    else
+    	RtpBuf[5] = 0x1a;
     RtpBuf[7]  = m_SequenceNumber & 0x0FF;           // each packet is counted with a sequence counter
     RtpBuf[6]  = m_SequenceNumber >> 8;
     RtpBuf[8]  = (m_Timestamp & 0xFF000000) >> 24;   // each image gets a timestamp
@@ -103,9 +117,9 @@ void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height)
     RtpBuf[15] = 0x67;
     // Prepare the 8 byte payload JPEG header
     RtpBuf[16] = 0x00;                               // type specific
-    RtpBuf[17] = 0x00;                               // 3 byte fragmentation offset for fragmented images
-    RtpBuf[18] = 0x00;
-    RtpBuf[19] = 0x00;
+    RtpBuf[17] = (offset & 0x00FF0000) >> 16;                               // 3 byte fragmentation offset for fragmented images
+    RtpBuf[18] = (offset & 0x0000FF00) >> 8;
+    RtpBuf[19] = (offset & 0x000000FF);
     RtpBuf[20] = 0x01;                               // type
     RtpBuf[21] = QUALITY_FACTOR;                     // quality scale factor
     RtpBuf[22] = width/8;//0x06;                           // width  / 8 -> 48 pixel
@@ -114,7 +128,8 @@ void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height)
     //memcpy(&RtpBuf[24],Jpeg,JpegLen);
     
     m_SequenceNumber++;                              // prepare the packet counter for the next packet
-    m_Timestamp += 3600;                             // fixed timestamp increment for a frame rate of 25fps
+    if (isLastPacket)
+    	m_Timestamp += 3600;                             // fixed timestamp increment for a frame rate of 25fps
 
     if (m_TCPTransport) { // RTP over RTSP - we send the buffer + 4 byte additional header
     	m_ClientHandler->peer().send_n(RtpBuf, RtpPacketSize + 4,0);

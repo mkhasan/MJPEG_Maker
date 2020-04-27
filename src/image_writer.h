@@ -8,6 +8,8 @@
 #ifndef SRC_IMAGE_WRITER_H_
 #define SRC_IMAGE_WRITER_H_
 
+//class StreamSource;
+
 class ImageWriter {
 private:
 	int max_data_size;
@@ -18,6 +20,7 @@ protected:
 	int channel;
 	bool isInitialized;
 
+	//StreamSource * streamSource;
 
 public:
 	ImageWriter(int image_width=0, int image_heght=0, int channel=3);
@@ -29,6 +32,7 @@ public:
 	void SetMaxDataSize(int w, int h, int ch);
 	void SetMaxDataSize(int w, int h);
 	int GetMaxDataSize() const;
+	void GetDimenstion(int & width, int & height) const;
 };
 
 

@@ -63,6 +63,7 @@ private:
 	static int GetDataFromFile(char * data);
 	static std::ifstream::pos_type filesize(const char* filename);
     void    SendRtpPacket(char * Jpeg, int JpegLen, int width, int height);
+    void    SendRtpPacket(char * Jpeg, int JpegLen, int width, int height, bool isLastPacket, unsigned int offset);
 
     char * GetData(int & len);
 

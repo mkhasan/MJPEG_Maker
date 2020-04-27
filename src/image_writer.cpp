@@ -40,4 +40,9 @@ int ImageWriter::GetMaxDataSize() const{
 	return max_data_size;
 }
 
+void ImageWriter::GetDimenstion(int & _image_width, int & _image_height) const {
+	_image_width = image_width;
+	_image_height = image_height;
+}
+
 

@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hasan/hdd/mjpeg_maker/src/CRtspSession.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjpeg_maker.dir/src/CRtspSession.cpp.o"
-  "/home/hasan/hdd/mjpeg_maker/src/CStreamer.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjpeg_maker.dir/src/CStreamer.cpp.o"
-  "/home/hasan/hdd/mjpeg_maker/src/JPEGSamples.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjpeg_maker.dir/src/JPEGSamples.cpp.o"
-  "/home/hasan/hdd/mjpeg_maker/src/client_handler.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjpeg_maker.dir/src/client_handler.cpp.o"
-  "/home/hasan/hdd/mjpeg_maker/src/fake_source.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o"
-  "/home/hasan/hdd/mjpeg_maker/src/image_writer.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjpeg_maker.dir/src/image_writer.cpp.o"
-  "/home/hasan/hdd/mjpeg_maker/src/jpeg_writer.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjpeg_maker.dir/src/jpeg_writer.cpp.o"
-  "/home/hasan/hdd/mjpeg_maker/src/mjpeg_maker.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjpeg_maker.dir/src/mjpeg_maker.cpp.o"
-  "/home/hasan/hdd/mjpeg_maker/src/stream_source.cpp" "/home/hasan/hdd/mjpeg_maker/build/CMakeFiles/mjpeg_maker.dir/src/stream_source.cpp.o"
+  "/home/hasan/hdd/MyProjects/MJPEG_Maker/src/CRtspSession.cpp" "/home/hasan/hdd/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/CRtspSession.cpp.o"
+  "/home/hasan/hdd/MyProjects/MJPEG_Maker/src/CStreamer.cpp" "/home/hasan/hdd/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/CStreamer.cpp.o"
+  "/home/hasan/hdd/MyProjects/MJPEG_Maker/src/JPEGSamples.cpp" "/home/hasan/hdd/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/JPEGSamples.cpp.o"
+  "/home/hasan/hdd/MyProjects/MJPEG_Maker/src/client_handler.cpp" "/home/hasan/hdd/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/client_handler.cpp.o"
+  "/home/hasan/hdd/MyProjects/MJPEG_Maker/src/fake_source.cpp" "/home/hasan/hdd/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o"
+  "/home/hasan/hdd/MyProjects/MJPEG_Maker/src/image_writer.cpp" "/home/hasan/hdd/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/image_writer.cpp.o"
+  "/home/hasan/hdd/MyProjects/MJPEG_Maker/src/jpeg_writer.cpp" "/home/hasan/hdd/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/jpeg_writer.cpp.o"
+  "/home/hasan/hdd/MyProjects/MJPEG_Maker/src/mjpeg_maker.cpp" "/home/hasan/hdd/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/mjpeg_maker.cpp.o"
+  "/home/hasan/hdd/MyProjects/MJPEG_Maker/src/stream_source.cpp" "/home/hasan/hdd/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/stream_source.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

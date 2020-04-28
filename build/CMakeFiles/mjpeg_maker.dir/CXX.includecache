@@ -171,6 +171,12 @@ sstream
 -
 string.h
 -
+map
+-
+memory
+-
+iostream
+-
 
 /usr/local/include/libavcodec/avcodec.h
 errno.h

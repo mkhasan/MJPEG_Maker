@@ -11,28 +11,32 @@
 #include <new>
 #include <assert.h>
 
-StreamSource::StreamSource(int _width, int _height, CStreamer * _streamer, ImageWriter * _writer)
+StreamSource::StreamSource(int _width, int _height, int _streamID, CStreamer * _streamer, ImageWriter * _writer)
 	: width(_width)
 	, height(_height)
 	, streamer(_streamer)
 	, writer(_writer)
-
+	, streamID(_streamID)
 {
-	if (width > 0 && height > 0) {
-		streamer->data = new (std::nothrow) char[writer->GetMaxDataSize()];
-		printf(" ************************  source created ************************** \n ");
-	}
-	else
-		assert(0);
+	//channel = streamer->m_
+	//printf("channel is %d \n", streamID );
+	//assert(streamID == 0 || streamID == 1);
+
 
 }
 
 
 StreamSource::~StreamSource() {
 	printf("In StreamSource Destructor \n");
-	delete[] streamer->data;
+
 }
 
+void StreamSource::SetStreamID(int _streamID) {
+	streamID = _streamID;
 
+	printf("streamID is %d \n", streamID );
+	assert(streamID == 0 || streamID == 1);
+
+}
 
 

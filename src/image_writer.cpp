@@ -13,6 +13,7 @@ ImageWriter::ImageWriter(int _image_width, int _image_height, int _channel)
 	: image_width(_image_width)
 	, image_height(_image_height)
 	, channel(_channel)
+	, buffer(NULL)
 	, isInitialized(false)
 
 {
@@ -45,4 +46,10 @@ void ImageWriter::GetDimenstion(int & _image_width, int & _image_height) const {
 	_image_height = image_height;
 }
 
+char * ImageWriter::GetBuffer() {
+	return buffer;
+}
 
+int ImageWriter::Write(char * src, int stride, int quality) {
+	return Write(buffer, src, stride, quality);
+}

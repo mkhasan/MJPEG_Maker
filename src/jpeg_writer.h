@@ -38,7 +38,7 @@ class JPEG_Writer : public ImageWriter {
 
 public:
 
-	JPEG_Writer(int image_width, int image_heigt);
+	JPEG_Writer(int image_width, int image_height);
 	~JPEG_Writer();
 
 	void Initialize(int image_width, int image_height);

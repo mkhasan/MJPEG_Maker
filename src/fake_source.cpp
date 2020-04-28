@@ -42,9 +42,9 @@ static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char *
 
 
 
-FakeSource::FakeSource(int width, int height, CStreamer * streamer, string f_name)
-	: StreamSource(width, height, streamer, new JPEG_Writer(width, height))
-	, filename(f_name)
+FakeSource::FakeSource(CStreamer * streamer, int streamID)
+	: StreamSource(WIDTH, HEIGHT, streamID, streamer, new JPEG_Writer(WIDTH, HEIGHT))
+	//, filename(f_name)
 	, quit(false), tid(NULL)
 {
 	info.quit = &quit;
@@ -193,7 +193,7 @@ void * FakeSource::stream_generator(void * arg) {
 
 	while(av_read_frame(pFormatCtx, &packet)>=0 && (info->streamer->finished == 0) && *(info->quit) == false) {
 
-		printf("data read\n");
+		//printf("data read\n");
 	    // Is this a packet from the video stream?
 	    if(packet.stream_index==videoStream) {
 	      // Decode video frame
@@ -220,9 +220,9 @@ void * FakeSource::stream_generator(void * arg) {
 					//SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height,
 						//1, info->streamer->data, (int) info->streamer->GetQualityFactor(), info->writer);
 
-					info->writer->Write(info->streamer->data, (char *)pFrameRGB->data[0], pFrameRGB->linesize[0], (int) info->streamer->GetQualityFactor());
+					info->writer->Write((char *)pFrameRGB->data[0], pFrameRGB->linesize[0], (int) info->streamer->GetQualityFactor());
 
-					info->streamer->StreamImage(pCodecCtx->width, pCodecCtx->height);
+					info->streamer->StreamImage(info->writer->GetBuffer(), pCodecCtx->width, pCodecCtx->height);
 
 
 				}

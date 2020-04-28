@@ -28,6 +28,7 @@ set ( SRC
 	src/jpeg_writer.cpp
 	src/stream_source.cpp
 	src/fake_source.cpp
+	#src/utils.cpp
 )			
 	
 add_executable(${APP} ${SRC})

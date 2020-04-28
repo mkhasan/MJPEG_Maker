@@ -20,6 +20,8 @@ protected:
 	int channel;
 	bool isInitialized;
 
+	char * buffer;
+
 	//StreamSource * streamSource;
 
 public:
@@ -29,10 +31,12 @@ public:
 	virtual void Initialize(int image_width, int image_height)=0;
 	virtual void Finalize()=0;
 	virtual int Write(char * dest, char * src, int stride, int quality)=0;
+	virtual int Write(char *src, int stride, int quality);
 	void SetMaxDataSize(int w, int h, int ch);
 	void SetMaxDataSize(int w, int h);
 	int GetMaxDataSize() const;
 	void GetDimenstion(int & width, int & height) const;
+	char * GetBuffer();
 };
 
 

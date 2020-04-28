@@ -204,17 +204,19 @@ u_short CStreamer::GetRtcpServerPort()
     return m_RtcpServerPort;
 };
 
-void CStreamer::StreamImage(int imageWidth, int imageHeight)
+void CStreamer::StreamImage(char * _data, int imageWidth, int imageHeight)
 {
     int len;
+
+    this->data = _data;
     char * p = GetData(len);
 
 
 
     //SendRtpPacket(JpegScanData[m_SendIdx],JpegScanDataLen, StreamID);
     SendRtpPacket(p, len, imageWidth, imageHeight);
-    m_SendIdx++;
-    if (m_SendIdx > 1) m_SendIdx = 0;
+    //m_SendIdx++;
+    //if (m_SendIdx > 1) m_SendIdx = 0;
 };
 
 
@@ -240,7 +242,7 @@ char * CStreamer::GetData(int & payloadLen)
 
 	int imageLen = GetImageLength(data);
 
-	printf("image len is %d \n", imageLen);
+	//printf("image len is %d \n", imageLen);
 	//if(imageLen > 0) {
 		//WriteIntoFile(data, imageLen);
 	//}

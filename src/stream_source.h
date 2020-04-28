@@ -16,11 +16,13 @@ class StreamSource {
 protected:
 	int width;
 	int height;
+	int streamID;
 	CStreamer * streamer;
 	ImageWriter * writer;
 public:
-	StreamSource(int width, int height, CStreamer * streamer, ImageWriter * writer);
+	StreamSource(int width, int height, int streamID, CStreamer * streamer, ImageWriter * writer);
 	virtual ~StreamSource();
+	void SetStreamID(int streamID);
 };
 
 

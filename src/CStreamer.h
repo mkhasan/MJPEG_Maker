@@ -42,7 +42,7 @@ public:
     void    InitTransport(u_short aRtpPort, u_short aRtcpPort, bool TCP);
     u_short GetRtpServerPort();
     u_short GetRtcpServerPort();
-    void    StreamImage(int imageWidth, int imageHeight);
+    void    StreamImage(char * data, int imageWidth, int imageHeight);
 
 
     unsigned char GetQualityFactor();

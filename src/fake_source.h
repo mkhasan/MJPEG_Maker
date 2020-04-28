@@ -14,11 +14,12 @@
 class FakeSource : public StreamSource {
 
 public:
-	static const int WIDTH = 520;
-	static const int HEIGHT = 274;
+	static const int WIDTH = 768;
+	static const int HEIGHT = 576;
+
 
 private:
-	const std::string filename;
+	const std::string filename = "/home/hasan/hdd/vtest.avi";
 	bool quit;
 	pthread_t tid;
 
@@ -32,7 +33,7 @@ public:
 		std::string filename;
 	} info;
 
-	FakeSource(int width, int height, CStreamer * streamer, std::string filename);
+	FakeSource(CStreamer * streamer,int streamID);
 	~FakeSource();
 	static void * stream_generator(void * arg);
 

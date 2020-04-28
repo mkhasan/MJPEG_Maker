@@ -111,7 +111,7 @@ JPEG_Writer::write_JPEG_file(unsigned char * dest, unsigned char * src, int stri
 	fseek(outfile,0,SEEK_END);
 	size = ftell(outfile);
 
-	printf("size is %d \n", size);
+	//printf("size is %d \n", size);
 	fclose(outfile);
 
 	return size;
@@ -159,6 +159,7 @@ void JPEG_Writer::Initialize(int _image_width, int _image_height) {
 
 	init_JPEG();
 
+	buffer = new char[GetMaxDataSize()];
 	isInitialized = true;
 }
 
@@ -166,6 +167,7 @@ void JPEG_Writer::Finalize() {
 	if (isInitialized == false)
 		return;
 	finalize_JPEG();
+	delete[] buffer;
 	//isInitialized = false;
 }
 

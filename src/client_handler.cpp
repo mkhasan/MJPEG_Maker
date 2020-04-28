@@ -269,9 +269,9 @@ Client_Handler::svc(void)
 
 	// /home/hasan/hdd/vtest.avi : (768 x 576)
 
-	streamSource = new FakeSource(768, 576, &Streamer, "/home/hasan/hdd/vtest.avi");
 
 
+	streamSource = new FakeSource(&Streamer, RtspSession.GetStreamID());
 
 
 	bool Stop = false;
@@ -305,6 +305,8 @@ Client_Handler::svc(void)
 				//cout << "done 2" << endl;
 				//ACE_OS::sleep(ACE_Time_Value(0,500000));
 				printf("started ...");
+				//streamSource->SetStreamID(RtspSession.GetStreamID());
+
 				Streamer.streamStarted = 1;
 
 			}

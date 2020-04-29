@@ -133,7 +133,7 @@ void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height, b
 
     if (m_TCPTransport) { // RTP over RTSP - we send the buffer + 4 byte additional header
     	m_ClientHandler->peer().send_n(RtpBuf, RtpPacketSize + 4,0);
-    	printf("using tcp\n");
+    	//printf("using tcp\n");
     }
 
 
@@ -203,6 +203,11 @@ u_short CStreamer::GetRtcpServerPort()
 {
     return m_RtcpServerPort;
 };
+
+void CStreamer::StreamImage(char * data, int len, int width, int height) {
+
+	SendRtpPacket(data, len, width, height);
+}
 
 void CStreamer::StreamImage(char * _data, int imageWidth, int imageHeight)
 {

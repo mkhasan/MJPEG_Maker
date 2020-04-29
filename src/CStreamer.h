@@ -44,6 +44,7 @@ public:
     u_short GetRtpServerPort();
     u_short GetRtcpServerPort();
     void    StreamImage(char * data, int imageWidth, int imageHeight);
+    void    StreamImage(char * data, int len, int width, int height);
 
 
     unsigned char GetQualityFactor();

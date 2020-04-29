@@ -174,7 +174,11 @@ void JPEG_Writer::Finalize() {
 }
 
 int JPEG_Writer::Write(char * dest, char * src, int stride, int quality) {
-	return write_JPEG_file((unsigned char *) dest, (unsigned char *) src, stride, quality);
+	int len = write_JPEG_file((unsigned char *) dest, (unsigned char *) src, stride, quality);
+
+	if (len <= 0)
+		THROW(RobotException, "Input data format error");
+	return len;
 }
 
 void JPEG_Writer::GetInfo(char * data, int data_len, int & width, int & height, int & payloadIndex) {

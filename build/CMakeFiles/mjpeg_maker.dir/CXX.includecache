@@ -117,6 +117,8 @@ string
 /home/hasan/hdd/MyProjects/MJPEG_Maker/src/image_writer.cpp
 image_writer.h
 /home/hasan/hdd/MyProjects/MJPEG_Maker/src/image_writer.h
+utils.h
+/home/hasan/hdd/MyProjects/MJPEG_Maker/src/utils.h
 stdio.h
 -
 

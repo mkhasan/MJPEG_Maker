@@ -6,6 +6,7 @@
  */
 
 #include "image_writer.h"
+#include "utils.h"
 
 #include <stdio.h>
 
@@ -52,4 +53,5 @@ char * ImageWriter::GetBuffer() {
 
 int ImageWriter::Write(char * src, int stride, int quality) {
 	return Write(buffer, src, stride, quality);
+
 }

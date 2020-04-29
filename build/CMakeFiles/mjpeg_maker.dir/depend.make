@@ -61,6 +61,7 @@ CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o: /usr/local/include/libswscale/
 
 CMakeFiles/mjpeg_maker.dir/src/image_writer.cpp.o: ../src/image_writer.cpp
 CMakeFiles/mjpeg_maker.dir/src/image_writer.cpp.o: ../src/image_writer.h
+CMakeFiles/mjpeg_maker.dir/src/image_writer.cpp.o: ../src/utils.h
 
 CMakeFiles/mjpeg_maker.dir/src/jpeg_writer.cpp.o: ../src/CStreamer.h
 CMakeFiles/mjpeg_maker.dir/src/jpeg_writer.cpp.o: ../src/image_writer.h

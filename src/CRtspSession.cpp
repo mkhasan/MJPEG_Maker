@@ -49,6 +49,8 @@ bool CRtspSession::ParseRtspRequest(char const * aRequest, unsigned aRequestSize
     CurRequestSize = aRequestSize;
     memcpy(CurRequest,aRequest,aRequestSize);
 
+    printf("CURRENT REQUEST IS: %s\n", CurRequest);
+
     // check whether the request contains information about the RTP/RTCP UDP client ports (SETUP command)
     char * ClientPortPtr;
     char * TmpPtr;

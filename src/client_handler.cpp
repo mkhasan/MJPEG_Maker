@@ -19,7 +19,7 @@
 
 //void * Start(void * arg);
 
-//#define ACE_DEBUG(...)
+#define ACE_DEBUG(...)
 
 
 
@@ -304,7 +304,7 @@ Client_Handler::svc(void)
 				//TheImageProc::instance()->get_frame = 1;
 				//cout << "done 2" << endl;
 				//ACE_OS::sleep(ACE_Time_Value(0,500000));
-				printf("started ...");
+				printf("started .........................................................\n");
 				//streamSource->SetStreamID(RtspSession.GetStreamID());
 
 				Streamer.streamStarted = 1;
@@ -314,6 +314,7 @@ Client_Handler::svc(void)
 			{
 				Stop = true;
 
+				printf("stopped ...\n");
 				Streamer.streamStarted = 0;
 
 			}

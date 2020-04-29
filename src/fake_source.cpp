@@ -60,6 +60,8 @@ FakeSource::FakeSource(CStreamer * streamer, int streamID)
 		THROW(RobotException, ss.str().c_str());
 	}
 
+	printf("FakeSource created \n");
+
 }
 
 FakeSource::~FakeSource() {
@@ -220,9 +222,15 @@ void * FakeSource::stream_generator(void * arg) {
 					//SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height,
 						//1, info->streamer->data, (int) info->streamer->GetQualityFactor(), info->writer);
 
-					info->writer->Write((char *)pFrameRGB->data[0], pFrameRGB->linesize[0], (int) info->streamer->GetQualityFactor());
+					int data_len = info->writer->Write((char *)pFrameRGB->data[0], pFrameRGB->linesize[0], (int) info->streamer->GetQualityFactor());
 
+					int w, h, offset;
+					JPEG_Writer::GetInfo(info->writer->GetBuffer(), data_len, w, h, offset);
+					assert(w == pCodecCtx->width && h == pCodecCtx->height);
+
+					char * p = info->writer->GetBuffer();
 					info->streamer->StreamImage(info->writer->GetBuffer(), pCodecCtx->width, pCodecCtx->height);
+					//info->streamer->StreamImage(&p[offset], data_len-offset, w, h);
 
 
 				}

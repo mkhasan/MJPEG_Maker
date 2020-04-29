@@ -252,7 +252,7 @@ Client_Handler::svc(void)
 
 
 
-	StreamSource * streamSource;
+	//StreamSource streamSource;
 
 	// 768 × 576
 	// /home/usrc/hdd/opencv/samples/data/vtest.avi
@@ -271,7 +271,7 @@ Client_Handler::svc(void)
 
 
 
-	streamSource = new FakeSource(&Streamer, RtspSession.GetStreamID());
+	//FakeSource streamSource(&Streamer, RtspSession.GetStreamID());
 
 
 	bool Stop = false;
@@ -332,7 +332,7 @@ Client_Handler::svc(void)
 	free(b);
 
 
-	delete streamSource;
+	//delete streamSource;
 
   return 0;
 }

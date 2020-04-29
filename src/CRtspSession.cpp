@@ -23,6 +23,7 @@ CRtspSession::CRtspSession(Client_Handler *_aClientHandler, CStreamer * aStreame
     m_ClientRTPPort  =  0;
     m_ClientRTCPPort =  0;
     m_TcpTransport   =  false;
+    printf("addresses are %x %x \n", _aClientHandler, aStreamer );
 };
 
 CRtspSession::~CRtspSession()
@@ -49,7 +50,7 @@ bool CRtspSession::ParseRtspRequest(char const * aRequest, unsigned aRequestSize
     CurRequestSize = aRequestSize;
     memcpy(CurRequest,aRequest,aRequestSize);
 
-    printf("CURRENT REQUEST IS: %s\n", CurRequest);
+    //printf("CURRENT REQUEST IS: %s\n", CurRequest);
 
     // check whether the request contains information about the RTP/RTCP UDP client ports (SETUP command)
     char * ClientPortPtr;

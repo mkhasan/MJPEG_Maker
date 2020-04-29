@@ -69,7 +69,9 @@ FakeSource::~FakeSource() {
 	printf("In FakeSource Destructor \n");
 	if (tid != NULL && quit == false) {
 		quit = true;
+		printf("waiting for thread to finish \n");
 		pthread_join(tid, NULL);
+		printf("done \n");
 	}
 
 	delete writer;
@@ -217,7 +219,7 @@ void * FakeSource::stream_generator(void * arg) {
 				);
 
 
-				if(info->streamer->streamStarted)
+				if(info->streamer->streamStarted && *(info->quit) == false)
 				{
 					//SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height,
 						//1, info->streamer->data, (int) info->streamer->GetQualityFactor(), info->writer);
@@ -231,6 +233,8 @@ void * FakeSource::stream_generator(void * arg) {
 					char * p = info->writer->GetBuffer();
 					info->streamer->StreamImage(info->writer->GetBuffer(), pCodecCtx->width, pCodecCtx->height);
 					//info->streamer->StreamImage(&p[offset], data_len-offset, w, h);
+
+					//printf("sent \n");
 
 
 				}

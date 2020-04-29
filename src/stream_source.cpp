@@ -21,7 +21,7 @@ StreamSource::StreamSource(int _width, int _height, int _streamID, CStreamer * _
 	//channel = streamer->m_
 	//printf("channel is %d \n", streamID );
 	//assert(streamID == 0 || streamID == 1);
-
+	printf("constructor called \n");
 
 }
 

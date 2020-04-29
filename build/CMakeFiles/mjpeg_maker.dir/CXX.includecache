@@ -127,6 +127,8 @@ jpeg_writer.h
 /home/hasan/hdd/MyProjects/MJPEG_Maker/src/jpeg_writer.h
 string.h
 -
+CStreamer.h
+/home/hasan/hdd/MyProjects/MJPEG_Maker/src/CStreamer.h
 utils.h
 /home/hasan/hdd/MyProjects/MJPEG_Maker/src/utils.h
 

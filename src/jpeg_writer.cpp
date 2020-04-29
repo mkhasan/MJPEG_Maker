@@ -10,6 +10,7 @@
 #include "jpeg_writer.h"
 #include <string.h>
 
+#include "CStreamer.h"
 #include "utils.h"
 
 using namespace mjpeg_maker;
@@ -127,6 +128,7 @@ JPEG_Writer::write_JPEG_file(unsigned char * dest, unsigned char * src, int stri
 
 JPEG_Writer::JPEG_Writer(int _image_width, int _image_height)
 	: ImageWriter(_image_width, _image_height)
+
 {
 
 }
@@ -175,8 +177,187 @@ int JPEG_Writer::Write(char * dest, char * src, int stride, int quality) {
 	return write_JPEG_file((unsigned char *) dest, (unsigned char *) src, stride, quality);
 }
 
+void JPEG_Writer::GetInfo(char * data, int data_len, int & width, int & height, int & payloadIndex) {
+	int i;
+
+	//ifstream src(filename.c_str(), ios::binary);
+
+	//src.read(buf, 2);
+
+	const char * buf = &data[0];
+	const char * p = buf;
+
+	if (!CStreamer::IsSOI(buf[0], buf[1]))
+		THROW(RobotException, "Error in getting info");
+
+
+
+	buf += 2;
+	//src.read(buf, 4);
+
+	if (buf - data > data_len)
+		THROW(RobotException, "Error in getting info");
+
+
+	if(CStreamer::IsAPP0(buf[0], buf[1]))
+	{
+		int len = CStreamer::GetLength(buf[2], buf[3]);
+		if (len < 0)
+			THROW(RobotException, "Error in getting info");
+		//cout << "APP0 length is " << len << endl;
+		buf += 4;
+
+		if (buf - data > data_len)
+			THROW(RobotException, "Error in getting info");
+
+		//src.read(buf, len-2);
+		buf += len-2;
+
+		if (buf - data > data_len)
+			THROW(RobotException, "Error in getting info");
+
+
+		//src.read(buf, 4);
+
+	}
+
+
+	i = 0;
+	while(CStreamer::IsDQT(buf[0], buf[1]))
+	{
+		int len = CStreamer::GetLength(buf[2], buf[3]);
+		if (len < 0)
+			THROW(RobotException, "Error in getting info");
+
+		//cout << "DQT-" << i << " length is " << len << endl;
+		buf += 4;
+
+		if (buf - data > data_len)
+			THROW(RobotException, "Error in getting info");
+
+		//src.read(buf, len-2);
+
+		buf += len-2;
+		//src.read(buf, 4);
+		if (buf - data > data_len)
+			THROW(RobotException, "Error in getting info");
+
+		i++;
+
+	}
+
+
+	if (i == 0)
+		THROW(RobotException, "Error in getting info");
+
+
+	if(CStreamer::IsSOF(buf[0], buf[1]))
+	{
+
+		int len = CStreamer::GetLength(buf[2], buf[3]);
+		if (len < 0)
+			THROW(RobotException, "Error in getting info");
+
+		//cout << "SOF length is " << len << endl;
+		buf += 4;
+
+		if (buf - data > data_len)
+			THROW(RobotException, "Error in getting info");
+
+		//src.read(buf, len-2);
+
+		int val;
+		p = buf;
+		p++;
+
+		val = (int)*p & 0xff;
+
+		val = val << 8 | ((int)*(p+1) & 0xff);
+		//cout << "height is " << val << endl;
+		height = val;
+		p+= 2;
+
+		val = (int)*p & 0xff;
+
+		val = val << 8 | ((int)*(p+1) & 0xff);
+		//cout << "width is " << val << endl;
+		width = val;
+
+
+		buf += len-2;
+		//src.read(buf, 4);
+
+		if (buf - data > data_len)
+			THROW(RobotException, "Error in getting info");
+
+
+	}
+	else
+		THROW(RobotException, "Error in getting info");
+
+	i = 0;
+	while(CStreamer::IsDHT(buf[0], buf[1]))
+	{
+		int len = CStreamer::GetLength(buf[2], buf[3]);
+		if (len < 0)
+			THROW(RobotException, "Error in getting info");
+
+		//cout << "DHT-" << i << " length is " << len << endl;
+		buf += 4;
+
+		if (buf - data > data_len)
+			THROW(RobotException, "Error in getting info");
+
+		//src.read(buf, len-2);
+
+		buf += len-2;
+		if (buf - data > data_len)
+			THROW(RobotException, "Error in getting info");
+
+		//src.read(buf, 4);
+
+		i++;
+
+	}
+
+	if (i == 0)
+		THROW(RobotException, "Error in getting info");
+
+	if(CStreamer::IsSOS(buf[0], buf[1]))
+	{
+
+		int len = CStreamer::GetLength(buf[2], buf[3]);
+		if (len < 0)
+			THROW(RobotException, "Error in getting info");
+
+		//cout << "SOS length is " << len << endl;
+
+		buf += 4;
+
+		if (buf - data > data_len)
+			THROW(RobotException, "Error in getting info");
+
+		//src.read(buf, len-2);
+
+		buf += len-2;
+
+		if (buf - data > data_len)
+			THROW(RobotException, "Error in getting info");
+
+
+	}
+	else
+		THROW(RobotException, "Error in getting info");
+
 /*
-void JPEG_Writer::Write(char * dest, AVFrame * src, int quality) {
-	write_JPEG_file(dest, src, quality);
+	cout << "last 4 bytes are: " << hex << ((int)buf[0] & 0xff) << " " << ((int)buf[1] & 0xff) << " "
+			<< ((int)buf[2] & 0xff) << " " <<  ((int)buf[3] & 0xff) << endl;
+			*/
+
+
+
+	payloadIndex = buf - data;
+	if (payloadIndex <= 0)
+		THROW(RobotException, "Error in getting info");
+
 }
-*/

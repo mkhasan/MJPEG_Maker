@@ -13,6 +13,7 @@
 #define DWORD unsigned int
 #endif
 
+
 class Client_Handler;
 
 class CStreamer
@@ -50,7 +51,7 @@ public:
 
 private:
 
-private:
+public:
 	static bool IsSOI(char x, char y);
 	static bool IsAPP0(char x, char y);
 	static bool IsDQT(char x, char y);
@@ -58,7 +59,7 @@ private:
 	static bool IsDHT(char x, char y);
 	static bool IsSOS(char x, char y);
 	static int GetLength(char x, char y);
-
+private:
 	static int GetPayLoad(const char *data, int data_len, int & width, int & height);
 	static int GetDataFromFile(char * data);
 	static std::ifstream::pos_type filesize(const char* filename);

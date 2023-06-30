@@ -8,7 +8,7 @@
 #include "ace/Signal.h"
 #include "client_acceptor.h"
 
-#define RTSP_PORT 8554
+#define RTSP_PORT 8555
 
 /* As before, we create a simple signal handler that will set our
    finished flag.  There are, of course, more elegant ways to handle
@@ -85,7 +85,7 @@ main (int argc, char *argv[])
    signal(SIGTSTP, catch_signal);
    signal(SIGPIPE, catch_signal);
 
-   printf("url=rtsp://127.0.0.1:8554/mjpeg/1\n");
+   printf("url=rtsp://127.0.0.1:%d/mjpeg/1\n", RTSP_PORT);
   /* In our earlier servers, we used a global pointer to get to the
     reactor. I've never really liked that idea, so I've moved it into
     main() this time. When we get to the Client_Handler object you'll

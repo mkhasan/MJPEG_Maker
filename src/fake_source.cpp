@@ -47,6 +47,7 @@ FakeSource::FakeSource(CStreamer * streamer, int streamID)
 	//, filename(f_name)
 	, quit(false), tid(NULL)
 {
+	printf("FakeSource gonna be created \n");
 	info.quit = &quit;
 	info.streamer = streamer;
 	info.writer = writer;
@@ -186,7 +187,7 @@ void * FakeSource::stream_generator(void * arg) {
 	info->writer->GetDimenstion(w, h);
 
 	if (!(w == pCodecCtx->width && h == pCodecCtx->height)) {
-		printf("(%d x %d) \n", pCodecCtx->width, pCodecCtx->height);
+		printf("(%d,%d) vs (%d,%d) \n", w, h, pCodecCtx->width, pCodecCtx->height);
 		assert(w == pCodecCtx->width && h == pCodecCtx->height);
 	}
 	printf("before data read\n");
@@ -197,7 +198,7 @@ void * FakeSource::stream_generator(void * arg) {
 
 	while(av_read_frame(pFormatCtx, &packet)>=0 && (info->streamer->finished == 0) && *(info->quit) == false) {
 
-		//printf("data read\n");
+		printf("data read\n");
 	    // Is this a packet from the video stream?
 	    if(packet.stream_index==videoStream) {
 	      // Decode video frame

@@ -14,12 +14,12 @@
 class FakeSource : public StreamSource {
 
 public:
-	static const int WIDTH = 768;
-	static const int HEIGHT = 576;
+	static const int WIDTH = 320;//768;
+	static const int HEIGHT = 240;//576;
 
 
 private:
-	const std::string filename = "/home/hasan/hdd/vtest.avi";
+	const std::string filename = "/home/mecasys/extension/movie_clips/sMoky.avi";
 	bool quit;
 	pthread_t tid;
 

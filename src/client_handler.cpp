@@ -242,6 +242,7 @@ Client_Handler::svc(void)
     process().  */
 	char buf[BUFSIZ];
 
+  printf("------------------------------------------------------\n");
 	// Forever...
 
 	CStreamer    Streamer(this);                  // our streamer for UDP/TCP based RTP transport
@@ -252,7 +253,7 @@ Client_Handler::svc(void)
 
 
 
-	//StreamSource streamSource;
+	//StreamSource* streamSource;
 
 	// 768 × 576
 	// /home/usrc/hdd/opencv/samples/data/vtest.avi
@@ -262,7 +263,7 @@ Client_Handler::svc(void)
 
 	// /media/hasan/External/hdd/water_detection/clips/smoke.mp4 (1920 x 1080)
 
-	//streamSource = new FakeSource(1920, 1080, &Streamer, "/media/hasan/External/hdd/water_detection/clips/smoke.mp4");
+	//streamSource = new FakeSource(1920, 1080, &Streamer, "/home/mecasys/extension/movie_clips/smoke.mp4");
 
 	// /media/hasan/External/Movie/IceAge.avi : (520 x 274)
 	//streamSource = new FakeSource(520, 274, &Streamer, "/media/hasan/External/Movie/IceAge.avi");
@@ -271,9 +272,9 @@ Client_Handler::svc(void)
 
 
 
-	//FakeSource streamSource(&Streamer, RtspSession.GetStreamID());
+	FakeSource streamSource(&Streamer, RtspSession.GetStreamID());
 
-
+  
 	bool Stop = false;
 
 
@@ -326,10 +327,6 @@ Client_Handler::svc(void)
 
 	Streamer.finished = 1;
 
-
-	printf("return value is %d \n", b);
-
-	free(b);
 
 
 	//delete streamSource;

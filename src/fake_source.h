@@ -11,15 +11,27 @@
 #include "stream_source.h"
 #include <string>
 
+
+struct source_info_t {
+	const std::string filename;
+	const int width;
+	const int height;
+};
+
+//static const source_info_t source_info = {"/home/mecasys/extension/movie_clips/sMoky.avi", 320, 240};
+static const source_info_t source_info = {"/dev/video0", 1920, 1080};
+
+
 class FakeSource : public StreamSource {
 
 public:
-	static const int WIDTH = 320;//768;
-	static const int HEIGHT = 240;//576;
+	static int WIDTH;
+	static int HEIGHT;
 
 
 private:
-	const std::string filename = "/home/mecasys/extension/movie_clips/sMoky.avi";
+	const std::string filename = source_info.filename;
+	
 	bool quit;
 	pthread_t tid;
 

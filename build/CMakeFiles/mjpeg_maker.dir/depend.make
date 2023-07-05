@@ -12,6 +12,8 @@ CMakeFiles/mjpeg_maker.dir/src/CStreamer.cpp.o: ../src/CStreamer.h
 CMakeFiles/mjpeg_maker.dir/src/CStreamer.cpp.o: ../src/JPEGSamples.h
 CMakeFiles/mjpeg_maker.dir/src/CStreamer.cpp.o: ../src/client_handler.h
 CMakeFiles/mjpeg_maker.dir/src/CStreamer.cpp.o: ../src/config.h
+CMakeFiles/mjpeg_maker.dir/src/CStreamer.cpp.o: ../src/image_writer.h
+CMakeFiles/mjpeg_maker.dir/src/CStreamer.cpp.o: ../src/stream_source.h
 
 CMakeFiles/mjpeg_maker.dir/src/JPEGSamples.cpp.o: ../src/JPEGSamples.cpp
 CMakeFiles/mjpeg_maker.dir/src/JPEGSamples.cpp.o: ../src/JPEGSamples.h

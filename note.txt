@@ -1,0 +1,11 @@
+addresses are b08dd0 f24042f0 
+constructor called 
+FakeSource gonna be created (320 240)
+FakeSource created 
+Input #0, avi, from '/home/mecasys/extension/movie_clips/sMoky.avi':
+  Duration: 00:01:00.00, start: 0.000000, bitrate: 906 kb/s
+    Stream #0:0: Video: mpeg4 (Simple Profile) (XVID / 0x44495658), yuv420p, 320x240 [SAR 1:1 DAR 4:3], 903 kb/s, 15 fps, 15 tbr, 15 tbn, 15 tbc
+
+Input #0, video4linux2,v4l2, from '/dev/video0':
+  Duration: N/A, start: 152460.098146, bitrate: 995328 kb/s
+    Stream #0:0: Video: rawvideo (YUY2 / 0x32595559), yuyv422, 1920x1080, 995328 kb/s, 30 fps, 30 tbr, 1000k tbn, 1000k tbc

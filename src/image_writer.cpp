@@ -18,6 +18,7 @@ ImageWriter::ImageWriter(int _image_width, int _image_height, int _channel)
 	, isInitialized(false)
 
 {
+	
 	SetMaxDataSize(image_width, image_height, channel);
 }
 

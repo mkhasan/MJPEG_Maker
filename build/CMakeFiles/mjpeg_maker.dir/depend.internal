@@ -13,6 +13,8 @@ CMakeFiles/mjpeg_maker.dir/src/CStreamer.cpp.o
  /home/mecasys/MyProjects/MJPEG_Maker/src/JPEGSamples.h
  /home/mecasys/MyProjects/MJPEG_Maker/src/client_handler.h
  /home/mecasys/MyProjects/MJPEG_Maker/src/config.h
+ /home/mecasys/MyProjects/MJPEG_Maker/src/image_writer.h
+ /home/mecasys/MyProjects/MJPEG_Maker/src/stream_source.h
 CMakeFiles/mjpeg_maker.dir/src/JPEGSamples.cpp.o
  /home/mecasys/MyProjects/MJPEG_Maker/src/JPEGSamples.cpp
  /home/mecasys/MyProjects/MJPEG_Maker/src/JPEGSamples.h

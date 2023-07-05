@@ -14,6 +14,7 @@ class ImageWriter {
 private:
 	int max_data_size;
 
+	friend class CStreamer;
 protected:
 	int image_width;
 	int image_height;

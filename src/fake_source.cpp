@@ -23,7 +23,7 @@ extern "C" {
 #include <libavcodec/avcodec.h>
 #include <libavformat/avformat.h>
 #include <libswscale/swscale.h>
-
+#include <libavdevice/avdevice.h>
 
 
 #ifdef __cplusplus
@@ -36,18 +36,22 @@ extern "C" {
 using namespace std;
 using namespace mjpeg_maker;
 
+int StreamSource::WIDTH = source_info.width;
+int StreamSource::HEIGHT = source_info.height;
+
 //const string FakeSource::filename = "/media/hasan/External/Movie/IceAge.avi";
 static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor, ImageWriter * writer);
-
+static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame);
 
 
 
 FakeSource::FakeSource(CStreamer * streamer, int streamID)
-	: StreamSource(WIDTH, HEIGHT, streamID, streamer, new JPEG_Writer(WIDTH, HEIGHT))
+	: StreamSource(StreamSource::WIDTH, StreamSource::HEIGHT, streamID, streamer, new JPEG_Writer(StreamSource::WIDTH, StreamSource::HEIGHT))
 	//, filename(f_name)
 	, quit(false), tid(NULL)
 {
-	printf("FakeSource gonna be created \n");
+	
+	printf("FakeSource gonna be created (%d %d)\n", StreamSource::WIDTH, StreamSource::HEIGHT);
 	info.quit = &quit;
 	info.streamer = streamer;
 	info.writer = writer;
@@ -96,8 +100,15 @@ void * FakeSource::stream_generator(void * arg) {
 
 
 	info_struct *info = (info_struct *) arg;
-
+	
+	avdevice_register_all(); // for device 
+	avcodec_register_all();
 	av_register_all();
+
+
+  	AVInputFormat *inputFormat =av_find_input_format("x11grab");
+  	AVDictionary *options = nullptr;
+  	av_dict_set(&options, "framerate", "30", 0);
 
 	if(avformat_open_input(&pFormatCtx, info->filename.c_str(), NULL, NULL)!=0) {
 		fprintf(stderr, "Couldn't open file \n");
@@ -129,6 +140,7 @@ void * FakeSource::stream_generator(void * arg) {
 
 	pCodecCtx=pFormatCtx->streams[videoStream]->codec;
 
+	printf("-----------------------------------------fmt is: %d \n", pCodecCtx->pix_fmt);
 
 	pCodec=avcodec_find_decoder(pCodecCtx->codec_id);
 	if(pCodec==NULL) {
@@ -196,6 +208,7 @@ void * FakeSource::stream_generator(void * arg) {
 
 	info->writer->Initialize();
 
+	int count = 0;
 	while(av_read_frame(pFormatCtx, &packet)>=0 && (info->streamer->finished == 0) && *(info->quit) == false) {
 
 		printf("data read\n");
@@ -224,15 +237,30 @@ void * FakeSource::stream_generator(void * arg) {
 				{
 					//SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height,
 						//1, info->streamer->data, (int) info->streamer->GetQualityFactor(), info->writer);
+					
+					SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height, count++);
 
 					int data_len = info->writer->Write((char *)pFrameRGB->data[0], pFrameRGB->linesize[0], (int) info->streamer->GetQualityFactor());
 
 					int w, h, offset;
+					char * p = info->writer->GetBuffer();
 					JPEG_Writer::GetInfo(info->writer->GetBuffer(), data_len, w, h, offset);
 					assert(w == pCodecCtx->width && h == pCodecCtx->height);
+					int k;
+					int val_1;
+					int val_2;
+					for (k=1; k<data_len; ++k) {
+						val_1 = (int) p[k-1] & 0xff;
+						val_2 = (int) p[k] & 0xff;
+						if (val_1 == 0xff && val_2 == 0xd9)
+							break;						
+						
+					}
 
-					char * p = info->writer->GetBuffer();
-					info->streamer->StreamImage(info->writer->GetBuffer(), pCodecCtx->width, pCodecCtx->height);
+					
+					printf("--------------------------------------image len: %d offset: %d, %d \n", data_len, offset, k);
+					//info->streamer->StreamImage(info->writer->GetBuffer(), pCodecCtx->width, pCodecCtx->height);
+					info->streamer->StreamImage(p+offset, data_len-offset, pCodecCtx->width, pCodecCtx->height);
 					//info->streamer->StreamImage(&p[offset], data_len-offset, w, h);
 
 					//printf("sent \n");
@@ -274,4 +302,22 @@ void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, 
 
   }
 
+}
+
+void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame) {
+  FILE *pFile;
+  char szFilename[32];
+  int  y;
+  // Open file
+  sprintf(szFilename, "temp/frame%d.ppm", iFrame);
+  pFile=fopen(szFilename, "wb");
+  if(pFile==NULL)
+    return;
+  // Write header
+  fprintf(pFile, "P6\n%d %d\n255\n", width, height);
+  // Write pixel data
+  for(y=0; y<height; y++)
+    fwrite(pFrame->data[0]+y*pFrame->linesize[0], 1, width*3, pFile);
+  // Close file
+  fclose(pFile);
 }

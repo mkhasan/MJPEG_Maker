@@ -6,6 +6,7 @@
 
 #include "client_handler.h"
 
+#include "stream_source.h"
 #include "CStreamer.h"
 #include "JPEGSamples.h"
 //#include "mjpeg_tester.h"
@@ -20,6 +21,7 @@
 
 using namespace std;
 
+//int CStreamer::MAX_DATA_SIZE = 1920*1080*3+1024;
 CStreamer::CStreamer(Client_Handler *_aClientHandler)
 	: m_ClientHandler(_aClientHandler)
 	, finished(0)
@@ -42,6 +44,8 @@ CStreamer::CStreamer(Client_Handler *_aClientHandler)
 
 
     //this->activate();
+
+	//printf("++++++++++++++++++++++++++++++++++++ %d\n", MAX_DATA_SIZE);
 };
 
 CStreamer::~CStreamer()
@@ -252,7 +256,10 @@ char * CStreamer::GetData(int & payloadLen)
 		//WriteIntoFile(data, imageLen);
 	//}
 
-	assert(imageLen >= 0);
+	if (imageLen < 0) {
+		printf("image len: %d \n", imageLen);
+		assert(imageLen >= 0);
+	}
 
 
 
@@ -573,6 +580,7 @@ std::ifstream::pos_type CStreamer::filesize(const char* filename)
 int CStreamer::GetImageLength(const char * data)
 {
 	int i=0;
+	/*
 	int val_1, val_2;
 	for (i=0; i<MAX_DATA_SIZE-1; i++)
 	{
@@ -586,5 +594,6 @@ int CStreamer::GetImageLength(const char * data)
 	if (i == MAX_DATA_SIZE -1)
 		return -1;
 
+	*/
 	return i+2;
 }

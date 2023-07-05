@@ -13,6 +13,10 @@
 
 class StreamSource {
 
+public:
+	static int WIDTH;
+	static int HEIGHT;
+
 protected:
 	int width;
 	int height;

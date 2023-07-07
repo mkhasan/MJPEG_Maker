@@ -16,6 +16,7 @@
 #include "CStreamer.h"
 #include "CRtspSession.h"
 #include "fake_source.h"
+#include "file_source.h"
 
 //void * Start(void * arg);
 
@@ -253,26 +254,7 @@ Client_Handler::svc(void)
 
 
 
-	//StreamSource* streamSource;
-
-	// 768 × 576
-	// /home/usrc/hdd/opencv/samples/data/vtest.avi
-	//streamSource = new FakeSource(FakeSource::WIDTH, FakeSource::HEIGHT, &Streamer, "/media/hasan/External/Movie/IceAge.avi");
-
-
-
-	// /media/hasan/External/hdd/water_detection/clips/smoke.mp4 (1920 x 1080)
-
-	//streamSource = new FakeSource(1920, 1080, &Streamer, "/home/mecasys/extension/movie_clips/smoke.mp4");
-
-	// /media/hasan/External/Movie/IceAge.avi : (520 x 274)
-	//streamSource = new FakeSource(520, 274, &Streamer, "/media/hasan/External/Movie/IceAge.avi");
-
-	// /home/hasan/hdd/vtest.avi : (768 x 576)
-
-
-
-	FakeSource streamSource(&Streamer, RtspSession.GetStreamID());
+	FileSource streamSource(&Streamer, RtspSession.GetStreamID());
 
   
 	bool Stop = false;

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mecasys/MyProjects/MJPEG_Maker/src/JPEGSamples.cpp" "/home/mecasys/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/JPEGSamples.cpp.o"
   "/home/mecasys/MyProjects/MJPEG_Maker/src/client_handler.cpp" "/home/mecasys/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/client_handler.cpp.o"
   "/home/mecasys/MyProjects/MJPEG_Maker/src/fake_source.cpp" "/home/mecasys/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o"
+  "/home/mecasys/MyProjects/MJPEG_Maker/src/file_source.cpp" "/home/mecasys/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/file_source.cpp.o"
   "/home/mecasys/MyProjects/MJPEG_Maker/src/image_writer.cpp" "/home/mecasys/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/image_writer.cpp.o"
   "/home/mecasys/MyProjects/MJPEG_Maker/src/jpeg_writer.cpp" "/home/mecasys/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/jpeg_writer.cpp.o"
   "/home/mecasys/MyProjects/MJPEG_Maker/src/mjpeg_maker.cpp" "/home/mecasys/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/mjpeg_maker.cpp.o"
@@ -24,6 +25,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/include"
+  "/home/mecasys/extension/ffmpeg_ffserver/ffmpeg"
   )
 
 # Targets to which this target links.

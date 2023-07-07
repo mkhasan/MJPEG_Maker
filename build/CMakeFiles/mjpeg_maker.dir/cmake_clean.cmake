@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mjpeg_maker.dir/src/JPEGSamples.cpp.o"
   "CMakeFiles/mjpeg_maker.dir/src/client_handler.cpp.o"
   "CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o"
+  "CMakeFiles/mjpeg_maker.dir/src/file_source.cpp.o"
   "CMakeFiles/mjpeg_maker.dir/src/image_writer.cpp.o"
   "CMakeFiles/mjpeg_maker.dir/src/jpeg_writer.cpp.o"
   "CMakeFiles/mjpeg_maker.dir/src/mjpeg_maker.cpp.o"

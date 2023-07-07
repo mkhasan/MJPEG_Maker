@@ -36,8 +36,8 @@ extern "C" {
 using namespace std;
 using namespace mjpeg_maker;
 
-int StreamSource::WIDTH = source_info.width;
-int StreamSource::HEIGHT = source_info.height;
+int FakeSource::WIDTH = source_info.width;
+int FakeSource::HEIGHT = source_info.height;
 
 //const string FakeSource::filename = "/media/hasan/External/Movie/IceAge.avi";
 static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor, ImageWriter * writer);
@@ -46,12 +46,12 @@ static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame);
 
 
 FakeSource::FakeSource(CStreamer * streamer, int streamID)
-	: StreamSource(StreamSource::WIDTH, StreamSource::HEIGHT, streamID, streamer, new JPEG_Writer(StreamSource::WIDTH, StreamSource::HEIGHT))
+	: StreamSource(FakeSource::WIDTH, FakeSource::HEIGHT, streamID, streamer, new JPEG_Writer(FakeSource::WIDTH, FakeSource::HEIGHT))
 	//, filename(f_name)
 	, quit(false), tid(NULL)
 {
 	
-	printf("FakeSource gonna be created (%d %d)\n", StreamSource::WIDTH, StreamSource::HEIGHT);
+	printf("FakeSource gonna be created (%d %d)\n", FakeSource::WIDTH, FakeSource::HEIGHT);
 	info.quit = &quit;
 	info.streamer = streamer;
 	info.writer = writer;

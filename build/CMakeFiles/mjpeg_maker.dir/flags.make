@@ -6,5 +6,5 @@ CXX_FLAGS =  -ggdb -Wall -Wno-narrowing -D_GNU_SOURCE=1 -D_REENTRANT -I/usr/loca
 
 CXX_DEFINES = -DDATA_DIR=\"\"
 
-CXX_INCLUDES = -I/include 
+CXX_INCLUDES = -I/include -I/home/mecasys/extension/ffmpeg_ffserver/ffmpeg 
 

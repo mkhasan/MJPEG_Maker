@@ -25,9 +25,9 @@ static const source_info_t source_info = {"/dev/video0", 1920, 1080};
 class FakeSource : public StreamSource {
 
 public:
+
 	static int WIDTH;
 	static int HEIGHT;
-
 
 private:
 	const std::string filename = source_info.filename;

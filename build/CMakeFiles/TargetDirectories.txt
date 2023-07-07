@@ -1,3 +1,0 @@
-/home/mecasys/MyProjects/MJPEG_Maker/build/CMakeFiles/rebuild_cache.dir
-/home/mecasys/MyProjects/MJPEG_Maker/build/CMakeFiles/edit_cache.dir
-/home/mecasys/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir

@@ -24,7 +24,7 @@ link_directories(
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ggdb -Wall -Wno-narrowing -D_GNU_SOURCE=1 -D_REENTRANT -I/usr/local/include -I/usr/include/SDL")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -L$ENV{ACE_ROOT}/lib -L$ENV{OPENCV_INSTALL_DIR}/lib" )
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -L$ENV{HOME}/ffmpeg_build/lib -L/usr/local/lib -lavformat -lavcodec -ldl -lxcb-xfixes -lxcb-render -lxcb-shape -lxcb -lX11 -lz -lswresample -lswscale -lavutil -lm -lSDL" )
+#set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -L$ENV{HOME}/ffmpeg_build/lib -L/usr/local/lib -lavformat -lavcodec -ldl -lxcb-xfixes -lxcb-render -lxcb-shape -lxcb -lX11 -lz -lswresample -lswscale -lavutil -lm -lSDL" )
 
 set ( SRC
 	src/${APP}.cpp
@@ -35,12 +35,12 @@ set ( SRC
 	src/image_writer.cpp
 	src/jpeg_writer.cpp
 	src/stream_source.cpp
-	src/fake_source.cpp
+#	src/fake_source.cpp
 	src/file_source.cpp
 	#src/utils.cpp
 )			
 	
 add_executable(${APP} ${SRC})
 
-target_link_libraries (${APP} ACE avformat avcodec dl xcb-xfixes xcb-render xcb-shape xcb X11 z swresample swscale avutil avdevice m SDL pthread jpeg pthread)
-
+#target_link_libraries (${APP} ACE avformat avcodec dl xcb-xfixes xcb-render xcb-shape xcb X11 z swresample swscale avutil avdevice m SDL pthread jpeg pthread)
+target_link_libraries (${APP} ACE m pthread jpeg pthread)

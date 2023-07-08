@@ -8,7 +8,7 @@
 #include "ace/Signal.h"
 #include "client_acceptor.h"
 
-#define RTSP_PORT 8555
+#define RTSP_PORT 8554
 
 /* As before, we create a simple signal handler that will set our
    finished flag.  There are, of course, more elegant ways to handle

@@ -348,7 +348,7 @@ void CRtspSession::Handle_RtspPLAY()
         "%s\r\n"
         "Range: npt=0.000-\r\n"
         "Session: %i\r\n"
-        "RTP-Info: url=rtsp://127.0.0.1:8554/mjpeg/1/track1\r\n\r\n",
+        "RTP-Info: url=rtsp://127.0.0.1:8554/mjpeg/1\r\n\r\n",
         m_CSeq,
         DateHeader(),
         m_RtspSessionID);

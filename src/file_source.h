@@ -17,7 +17,7 @@ struct file_info_t {
 };
 
 //static const source_info_t source_info = {"/home/mecasys/extension/movie_clips/sMoky.avi", 320, 240};
-static const file_info_t fileInfo = {"/home/ubuntu/MyProjects/samples/jpegs", 1920, 1080, "frame%06d.jpg", 0, 129};
+static const file_info_t fileInfo = {"/home/ubuntu/MyProjects/samples/resized_jpegs", 768, 432, "frame%06d.jpg", 0, 129};
 
 class FileSource : public StreamSource {
 

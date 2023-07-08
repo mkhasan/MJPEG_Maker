@@ -66,7 +66,7 @@ void * FileSource::stream_generator(void * arg) {
             JPEG_Writer::GetInfo(info->data, len, w, h, offset);
 
 
-            printf("--------------------------------------image len: %d offset: %d, %d \n", len, offset, 0);
+            //printf("--------------------------------------image len: %d offset: %d, %d \n", len, offset, 0);
 
             info->streamer->StreamImage(info->data+offset, len-offset, w, h);
         }
@@ -92,7 +92,7 @@ void FileSource::GetNext(char* data, int& len) {
 	sprintf(filename, fileInfo.pattern.c_str(), index);
     string fullpath = fileInfo.pathname + string("/") + filename;
 
-    cout << "full path: " << fullpath << endl;
+    //cout << "full path: " << fullpath << endl;
 
 	get_data(data, len, fullpath);
 	if (len < 0) {

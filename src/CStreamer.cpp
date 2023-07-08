@@ -137,13 +137,13 @@ void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height, b
 
     if (m_TCPTransport) { // RTP over RTSP - we send the buffer + 4 byte additional header
     	m_ClientHandler->peer().send_n(RtpBuf, RtpPacketSize + 4,0);
-    	//printf("using tcp\n");
+    	printf("using tcp");
     }
 
 
     else {               // UDP - we send just the buffer by skipping the 4 byte RTP over RTSP header
     	m_RtpSocket.send (&RtpBuf[4], RtpPacketSize, remoteAddr);
-    	//printf("using udp\n");
+    	printf("using udp at %d\n", m_RtpClientPort);
 
 
 
@@ -161,11 +161,6 @@ void CStreamer::InitTransport(u_short aRtpPort, u_short aRtcpPort, bool TCP)
     m_RtcpClientPort = aRtcpPort;
     m_TCPTransport   = TCP;
 
-
-
-    m_RtpClientPort  = aRtpPort;
-    m_RtcpClientPort = aRtcpPort;
-    m_TCPTransport   = TCP;
 
     if (!m_TCPTransport)
     {   // allocate port pairs for RTP/RTCP ports in UDP transport mode

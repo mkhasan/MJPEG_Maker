@@ -12,25 +12,11 @@
 #include <string>
 
 
-struct source_info_t {
-	const std::string filename;
-	const int width;
-	const int height;
-};
-
-//static const source_info_t source_info = {"/home/mecasys/extension/movie_clips/sMoky.avi", 320, 240};
-static const source_info_t source_info = {"/dev/video0", 1920, 1080};
-
-
 class FakeSource : public StreamSource {
 
 public:
 
-	static int WIDTH;
-	static int HEIGHT;
-
 private:
-	const std::string filename = source_info.filename;
 	
 	bool quit;
 	pthread_t tid;
@@ -38,11 +24,14 @@ private:
 public:
 	const int SLEEP_IN_US = 40000;
 
+	const int width = 48;
+	const int height = 32;
+
 	struct info_struct {
 		bool * quit;
 		CStreamer * streamer;
-		ImageWriter * writer;
-		std::string filename;
+		int width;
+		int height;
 	} info;
 
 	FakeSource(CStreamer * streamer,int streamID);

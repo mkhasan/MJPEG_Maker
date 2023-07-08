@@ -7,6 +7,7 @@
 
 #include "utils.h"
 #include "fake_source.h"
+#include "JPEGSamples.h"
 
 #include <pthread.h>
 #include <unistd.h>
@@ -20,11 +21,6 @@ extern "C" {
 #include "jpeg_writer.h"
 
 
-#include <libavcodec/avcodec.h>
-#include <libavformat/avformat.h>
-#include <libswscale/swscale.h>
-#include <libavdevice/avdevice.h>
-
 
 #ifdef __cplusplus
 }
@@ -36,26 +32,17 @@ extern "C" {
 using namespace std;
 using namespace mjpeg_maker;
 
-int FakeSource::WIDTH = source_info.width;
-int FakeSource::HEIGHT = source_info.height;
-
-//const string FakeSource::filename = "/media/hasan/External/Movie/IceAge.avi";
-static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor, ImageWriter * writer);
-static void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame);
-
-
 
 FakeSource::FakeSource(CStreamer * streamer, int streamID)
-	: StreamSource(FakeSource::WIDTH, FakeSource::HEIGHT, streamID, streamer, new JPEG_Writer(FakeSource::WIDTH, FakeSource::HEIGHT))
-	//, filename(f_name)
+	: StreamSource(width, height, streamID, streamer, NULL)
 	, quit(false), tid(NULL)
 {
 	
-	printf("FakeSource gonna be created (%d %d)\n", FakeSource::WIDTH, FakeSource::HEIGHT);
+	printf("FakeSource gonna be created (%d %d)\n", width, height);
 	info.quit = &quit;
 	info.streamer = streamer;
-	info.writer = writer;
-	info.filename = filename;
+	info.width = width;
+	info.height = height;
 
 	int err = pthread_create(&tid, NULL, &stream_generator, (void *) &info);
 	if (err != 0)
@@ -79,245 +66,47 @@ FakeSource::~FakeSource() {
 		printf("done \n");
 	}
 
-	delete writer;
 }
 
 
 void * FakeSource::stream_generator(void * arg) {
-	AVFormatContext *pFormatCtx = NULL;
-	int             i, videoStream;
-	AVCodecContext  *pCodecCtx = NULL;
-	AVCodec         *pCodec = NULL;
-	AVFrame         *pFrame = NULL;
-	AVFrame         *pFrameRGB = NULL;
-	AVPacket        packet;
-	int             frameFinished;
-	int             numBytes;
-	uint8_t         *buffer = NULL;
-
-	AVDictionary    *optionsDict = NULL;
-	struct SwsContext      *sws_ctx = NULL;
-
 
 	info_struct *info = (info_struct *) arg;
-	
-	avdevice_register_all(); // for device 
-	avcodec_register_all();
-	av_register_all();
-
-
-  	AVInputFormat *inputFormat =av_find_input_format("x11grab");
-  	AVDictionary *options = nullptr;
-  	av_dict_set(&options, "framerate", "30", 0);
-
-	if(avformat_open_input(&pFormatCtx, info->filename.c_str(), NULL, NULL)!=0) {
-		fprintf(stderr, "Couldn't open file \n");
-	    return NULL;
-	}
-
-	// Retrieve stream information
-	if(avformat_find_stream_info(pFormatCtx, NULL)<0) {
-		fprintf(stderr, "Couldn't find stream information \n");
-		return NULL;
-	}
-
-	av_dump_format(pFormatCtx, 0, info->filename.c_str(), 0);
-
-
-	videoStream=-1;
-	for(i=0; i<pFormatCtx->nb_streams; i++) {
-		if(pFormatCtx->streams[i]->codec->codec_type==AVMEDIA_TYPE_VIDEO) {
-			videoStream=i;
-			break;
-	    }
-	}
-
-	if(videoStream==-1) {
-		fprintf(stderr, "Didn't find a video stream \n");
-		return NULL;
-	}
-
-
-	pCodecCtx=pFormatCtx->streams[videoStream]->codec;
-
-	printf("-----------------------------------------fmt is: %d \n", pCodecCtx->pix_fmt);
-
-	pCodec=avcodec_find_decoder(pCodecCtx->codec_id);
-	if(pCodec==NULL) {
-		fprintf(stderr, "Unsupported codec \n");
-		return NULL; // Codec not found
-	}
-	// Open codec
-	if(avcodec_open2(pCodecCtx, pCodec, &optionsDict)<0) {
-		fprintf(stderr, "Could not open codec \n");
-		return NULL;
-	}
-
-	// Allocate video frame
-	pFrame=av_frame_alloc();
-
-	// Allocate an AVFrame structure
-	pFrameRGB=av_frame_alloc();
-	if(pFrameRGB==NULL) {
-		fprintf(stderr, "Could not get frame \n");
-		return NULL;
-	}
-
-	// Determine required buffer size and allocate buffer
-	numBytes=avpicture_get_size(AV_PIX_FMT_RGB24, pCodecCtx->width,
-				  pCodecCtx->height);
-	buffer=(uint8_t *)av_malloc(numBytes*sizeof(uint8_t));
-
-	sws_ctx =
-			sws_getContext
-			(
-				pCodecCtx->width,
-				pCodecCtx->height,
-				pCodecCtx->pix_fmt,
-				pCodecCtx->width,
-				pCodecCtx->height,
-				AV_PIX_FMT_RGB24,
-				SWS_BILINEAR,
-				NULL,
-				NULL,
-				NULL
-			);
-
-	// Assign appropriate parts of buffer to image planes in pFrameRGB
-	// Note that pFrameRGB is an AVFrame, but AVFrame is a superset
-	// of AVPicture
-
-	avpicture_fill((AVPicture *)pFrameRGB, buffer, AV_PIX_FMT_RGB24,
-		 pCodecCtx->width, pCodecCtx->height);
-
-	// Read frames and save first five frames to disk
-
-	//init_JPEG();
-
-
-	int w, h;
-	info->writer->GetDimenstion(w, h);
-
-	if (!(w == pCodecCtx->width && h == pCodecCtx->height)) {
-		printf("(%d,%d) vs (%d,%d) \n", w, h, pCodecCtx->width, pCodecCtx->height);
-		assert(w == pCodecCtx->width && h == pCodecCtx->height);
-	}
-	printf("before data read\n");
-
-
-
-	info->writer->Initialize();
+    
+    
 
 	int count = 0;
-	while(av_read_frame(pFormatCtx, &packet)>=0 && (info->streamer->finished == 0) && *(info->quit) == false) {
+    int len = 0;
+	const int offset = 100;
+	char payload[offset+KJpegCh1ScanDataLen];
 
-		printf("data read\n");
-	    // Is this a packet from the video stream?
-	    if(packet.stream_index==videoStream) {
-	      // Decode video frame
-	    	avcodec_decode_video2(pCodecCtx, pFrame, &frameFinished,
-				   &packet);
-
-			// Did we get a video frame?
-			if(frameFinished) {
-	    	  // Convert the image from its native format to RGB
-				sws_scale
-				(
-					sws_ctx,
-					(uint8_t const * const *)pFrame->data,
-					pFrame->linesize,
-					0,
-					pCodecCtx->height,
-					pFrameRGB->data,
-					pFrameRGB->linesize
-				);
+	while(*(info->quit) == false) {
+		
+		len = KJpegCh1ScanDataLen;
+		if (count % 2 == 0) {
+			memcpy(&payload[offset], JpegScanDataCh1A, KJpegCh1ScanDataLen);
+		}
+		else {
+			memcpy(&payload[offset], JpegScanDataCh1B, KJpegCh1ScanDataLen);
+		}
+        
+        if (len > 0 && info->streamer->streamStarted && *(info->quit) == false) {
+            	info->streamer->StreamImage(&payload[offset], len, info->width, info->height);
+			count = 1-count;
 
 
-				if(info->streamer->streamStarted && *(info->quit) == false)
-				{
-					//SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height,
-						//1, info->streamer->data, (int) info->streamer->GetQualityFactor(), info->writer);
-					
-					SaveFrame(pFrameRGB, pCodecCtx->width, pCodecCtx->height, count++);
+        }
 
-					int data_len = info->writer->Write((char *)pFrameRGB->data[0], pFrameRGB->linesize[0], (int) info->streamer->GetQualityFactor());
+		
 
-					int w, h, offset;
-					char * p = info->writer->GetBuffer();
-					JPEG_Writer::GetInfo(info->writer->GetBuffer(), data_len, w, h, offset);
-					assert(w == pCodecCtx->width && h == pCodecCtx->height);
-					int k;
-					int val_1;
-					int val_2;
-					for (k=1; k<data_len; ++k) {
-						val_1 = (int) p[k-1] & 0xff;
-						val_2 = (int) p[k] & 0xff;
-						if (val_1 == 0xff && val_2 == 0xd9)
-							break;						
-						
-					}
-
-					
-					printf("--------------------------------------image len: %d offset: %d, %d \n", data_len, offset, k);
-					//info->streamer->StreamImage(info->writer->GetBuffer(), pCodecCtx->width, pCodecCtx->height);
-					info->streamer->StreamImage(p+offset, data_len-offset, pCodecCtx->width, pCodecCtx->height);
-					//info->streamer->StreamImage(&p[offset], data_len-offset, w, h);
-
-					//printf("sent \n");
-
-
-				}
-			}
-
-			//printf("value of index %d \n", i++);
-	    }
-
-	    // Free the packet that was allocated by av_read_frame
-	    av_free_packet(&packet);
 	    usleep(40000);
-
-	    //  cout<< "tsleep : "<<tsleep<<" twakeup : "<<twakeup<<" t1 :"<<t1<<endl;
 
 	}
 
+
 	*(info->quit) = true;
+
 
 	return NULL;
 }
 
-
-void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame, char * data, int qualityFactor, ImageWriter * writer) {
-  FILE *pFile;
-  char szFilename[32];
-  int  y;
-
-
-  if (iFrame == 1)
-  {
-	  //curFrame = pFrame;
-	  //image_height = height;
-	  //image_width = width;
-	  //write_JPEG_file(data, qualityFactor);
-	  writer->Write(data, (char *)pFrame->data[0], pFrame->linesize[0], qualityFactor);
-
-  }
-
-}
-
-void SaveFrame(AVFrame *pFrame, int width, int height, int iFrame) {
-  FILE *pFile;
-  char szFilename[32];
-  int  y;
-  // Open file
-  sprintf(szFilename, "temp/frame%d.ppm", iFrame);
-  pFile=fopen(szFilename, "wb");
-  if(pFile==NULL)
-    return;
-  // Write header
-  fprintf(pFile, "P6\n%d %d\n255\n", width, height);
-  // Write pixel data
-  for(y=0; y<height; y++)
-    fwrite(pFrame->data[0]+y*pFrame->linesize[0], 1, width*3, pFile);
-  // Close file
-  fclose(pFile);
-}

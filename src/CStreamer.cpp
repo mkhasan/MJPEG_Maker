@@ -72,10 +72,14 @@ void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height) {
 	const int MAX_PAYLOAD_SIZE = 1456;
 
 	int offset = 0;
+    /*
 	for(int len = JpegLen; len > 0; len -= MAX_PAYLOAD_SIZE, offset += MAX_PAYLOAD_SIZE) {
 		SendRtpPacket(&Jpeg[offset], std::min(len, MAX_PAYLOAD_SIZE), width, height, len <= MAX_PAYLOAD_SIZE, offset);
 		//SendRtpPacket(&Jpeg[len], std::min(len, MAX_PAYLOAD_SIZE), width, height, len <= MAX_PAYLOAD_SIZE, offset);
 	}
+    */
+
+    SendRtpPacket(Jpeg, JpegLen, width, height, true, 0);
 }
 
 void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height, bool isLastPacket, unsigned int offset)
@@ -137,7 +141,7 @@ void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height, b
 
     if (m_TCPTransport) { // RTP over RTSP - we send the buffer + 4 byte additional header
     	m_ClientHandler->peer().send_n(RtpBuf, RtpPacketSize + 4,0);
-    	printf("using tcp");
+    	printf("using tcp \n");
     }
 
 

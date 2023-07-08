@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ubuntu/MyProjects/MJPEG_Maker/src/CStreamer.cpp" "/home/ubuntu/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/CStreamer.cpp.o"
   "/home/ubuntu/MyProjects/MJPEG_Maker/src/JPEGSamples.cpp" "/home/ubuntu/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/JPEGSamples.cpp.o"
   "/home/ubuntu/MyProjects/MJPEG_Maker/src/client_handler.cpp" "/home/ubuntu/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/client_handler.cpp.o"
+  "/home/ubuntu/MyProjects/MJPEG_Maker/src/fake_source.cpp" "/home/ubuntu/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o"
   "/home/ubuntu/MyProjects/MJPEG_Maker/src/file_source.cpp" "/home/ubuntu/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/file_source.cpp.o"
   "/home/ubuntu/MyProjects/MJPEG_Maker/src/image_writer.cpp" "/home/ubuntu/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/image_writer.cpp.o"
   "/home/ubuntu/MyProjects/MJPEG_Maker/src/jpeg_writer.cpp" "/home/ubuntu/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir/src/jpeg_writer.cpp.o"

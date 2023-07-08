@@ -28,6 +28,15 @@ CMakeFiles/mjpeg_maker.dir/src/client_handler.cpp.o: ../src/file_source.h
 CMakeFiles/mjpeg_maker.dir/src/client_handler.cpp.o: ../src/image_writer.h
 CMakeFiles/mjpeg_maker.dir/src/client_handler.cpp.o: ../src/stream_source.h
 
+CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o: ../src/CStreamer.h
+CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o: ../src/JPEGSamples.h
+CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o: ../src/fake_source.cpp
+CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o: ../src/fake_source.h
+CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o: ../src/image_writer.h
+CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o: ../src/jpeg_writer.h
+CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o: ../src/stream_source.h
+CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o: ../src/utils.h
+
 CMakeFiles/mjpeg_maker.dir/src/file_source.cpp.o: ../src/CStreamer.h
 CMakeFiles/mjpeg_maker.dir/src/file_source.cpp.o: ../src/file_source.cpp
 CMakeFiles/mjpeg_maker.dir/src/file_source.cpp.o: ../src/file_source.h

@@ -6,26 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/ubuntu/MyProjects/MJPEG_Maker/src/CStreamer.cpp
-iostream
--
-client_handler.h
-/home/ubuntu/MyProjects/MJPEG_Maker/src/client_handler.h
-stream_source.h
-/home/ubuntu/MyProjects/MJPEG_Maker/src/stream_source.h
-CStreamer.h
-/home/ubuntu/MyProjects/MJPEG_Maker/src/CStreamer.h
-JPEGSamples.h
-/home/ubuntu/MyProjects/MJPEG_Maker/src/JPEGSamples.h
-config.h
-/home/ubuntu/MyProjects/MJPEG_Maker/src/config.h
-stdio.h
--
-assert.h
--
-new
--
-
 /home/ubuntu/MyProjects/MJPEG_Maker/src/CStreamer.h
 fstream
 -
@@ -36,14 +16,40 @@ ace/SOCK_Dgram.h
 
 /home/ubuntu/MyProjects/MJPEG_Maker/src/JPEGSamples.h
 
-/home/ubuntu/MyProjects/MJPEG_Maker/src/client_handler.h
-ace/Svc_Handler.h
-/home/ubuntu/MyProjects/MJPEG_Maker/src/ace/Svc_Handler.h
-ace/SOCK_Stream.h
-/home/ubuntu/MyProjects/MJPEG_Maker/src/ace/SOCK_Stream.h
+/home/ubuntu/MyProjects/MJPEG_Maker/src/fake_source.cpp
+utils.h
+/home/ubuntu/MyProjects/MJPEG_Maker/src/utils.h
+fake_source.h
+/home/ubuntu/MyProjects/MJPEG_Maker/src/fake_source.h
+JPEGSamples.h
+/home/ubuntu/MyProjects/MJPEG_Maker/src/JPEGSamples.h
+pthread.h
+-
+unistd.h
+-
+jpeglib.h
+-
+jpeg_writer.h
+/home/ubuntu/MyProjects/MJPEG_Maker/src/jpeg_writer.h
+assert.h
+-
 
-/home/ubuntu/MyProjects/MJPEG_Maker/src/config.h
+/home/ubuntu/MyProjects/MJPEG_Maker/src/fake_source.h
+stream_source.h
+/home/ubuntu/MyProjects/MJPEG_Maker/src/stream_source.h
+string
+-
 
+/home/ubuntu/MyProjects/MJPEG_Maker/src/image_writer.h
+
+/home/ubuntu/MyProjects/MJPEG_Maker/src/jpeg_writer.h
+stdlib.h
+-
+stdio.h
+-
+jpeglib.h
+-
+image_writer.h
 /home/ubuntu/MyProjects/MJPEG_Maker/src/image_writer.h
 
 /home/ubuntu/MyProjects/MJPEG_Maker/src/stream_source.h
@@ -51,4 +57,20 @@ CStreamer.h
 /home/ubuntu/MyProjects/MJPEG_Maker/src/CStreamer.h
 image_writer.h
 /home/ubuntu/MyProjects/MJPEG_Maker/src/image_writer.h
+
+/home/ubuntu/MyProjects/MJPEG_Maker/src/utils.h
+string
+-
+exception
+-
+sstream
+-
+string.h
+-
+map
+-
+memory
+-
+iostream
+-
 

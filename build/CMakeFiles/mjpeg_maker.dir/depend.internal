@@ -28,6 +28,15 @@ CMakeFiles/mjpeg_maker.dir/src/client_handler.cpp.o
  /home/ubuntu/MyProjects/MJPEG_Maker/src/file_source.h
  /home/ubuntu/MyProjects/MJPEG_Maker/src/image_writer.h
  /home/ubuntu/MyProjects/MJPEG_Maker/src/stream_source.h
+CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o
+ /home/ubuntu/MyProjects/MJPEG_Maker/src/CStreamer.h
+ /home/ubuntu/MyProjects/MJPEG_Maker/src/JPEGSamples.h
+ /home/ubuntu/MyProjects/MJPEG_Maker/src/fake_source.cpp
+ /home/ubuntu/MyProjects/MJPEG_Maker/src/fake_source.h
+ /home/ubuntu/MyProjects/MJPEG_Maker/src/image_writer.h
+ /home/ubuntu/MyProjects/MJPEG_Maker/src/jpeg_writer.h
+ /home/ubuntu/MyProjects/MJPEG_Maker/src/stream_source.h
+ /home/ubuntu/MyProjects/MJPEG_Maker/src/utils.h
 CMakeFiles/mjpeg_maker.dir/src/file_source.cpp.o
  /home/ubuntu/MyProjects/MJPEG_Maker/src/CStreamer.h
  /home/ubuntu/MyProjects/MJPEG_Maker/src/file_source.cpp

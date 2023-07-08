@@ -231,6 +231,33 @@ src/client_handler.cpp.s:
 	$(MAKE) -f CMakeFiles/mjpeg_maker.dir/build.make CMakeFiles/mjpeg_maker.dir/src/client_handler.cpp.s
 .PHONY : src/client_handler.cpp.s
 
+src/fake_source.o: src/fake_source.cpp.o
+
+.PHONY : src/fake_source.o
+
+# target to build an object file
+src/fake_source.cpp.o:
+	$(MAKE) -f CMakeFiles/mjpeg_maker.dir/build.make CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.o
+.PHONY : src/fake_source.cpp.o
+
+src/fake_source.i: src/fake_source.cpp.i
+
+.PHONY : src/fake_source.i
+
+# target to preprocess a source file
+src/fake_source.cpp.i:
+	$(MAKE) -f CMakeFiles/mjpeg_maker.dir/build.make CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.i
+.PHONY : src/fake_source.cpp.i
+
+src/fake_source.s: src/fake_source.cpp.s
+
+.PHONY : src/fake_source.s
+
+# target to generate assembly for a file
+src/fake_source.cpp.s:
+	$(MAKE) -f CMakeFiles/mjpeg_maker.dir/build.make CMakeFiles/mjpeg_maker.dir/src/fake_source.cpp.s
+.PHONY : src/fake_source.cpp.s
+
 src/file_source.o: src/file_source.cpp.o
 
 .PHONY : src/file_source.o
@@ -387,6 +414,9 @@ help:
 	@echo "... src/client_handler.o"
 	@echo "... src/client_handler.i"
 	@echo "... src/client_handler.s"
+	@echo "... src/fake_source.o"
+	@echo "... src/fake_source.i"
+	@echo "... src/fake_source.s"
 	@echo "... src/file_source.o"
 	@echo "... src/file_source.i"
 	@echo "... src/file_source.s"

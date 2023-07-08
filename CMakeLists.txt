@@ -35,7 +35,7 @@ set ( SRC
 	src/image_writer.cpp
 	src/jpeg_writer.cpp
 	src/stream_source.cpp
-#	src/fake_source.cpp
+	src/fake_source.cpp
 	src/file_source.cpp
 	#src/utils.cpp
 )			

@@ -254,7 +254,7 @@ Client_Handler::svc(void)
 
 
 
-	FakeSource streamSource(&Streamer, RtspSession.GetStreamID());
+	FileSource streamSource(&Streamer, RtspSession.GetStreamID());
 
   
 	bool Stop = false;

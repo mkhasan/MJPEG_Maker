@@ -1,3 +1,4 @@
 /home/ubuntu/MyProjects/MJPEG_Maker/build/CMakeFiles/rebuild_cache.dir
 /home/ubuntu/MyProjects/MJPEG_Maker/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/MyProjects/MJPEG_Maker/build/CMakeFiles/test.dir
 /home/ubuntu/MyProjects/MJPEG_Maker/build/CMakeFiles/mjpeg_maker.dir

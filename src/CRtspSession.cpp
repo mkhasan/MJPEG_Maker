@@ -230,6 +230,7 @@ RTSP_CMD_TYPES CRtspSession::Handle_RtspRequest(char const * aRequest, unsigned 
             default: {};
         };
     };
+    cout << aRequest << " " << m_RtspCmdType << endl;
     return m_RtspCmdType;
 };
 
@@ -313,7 +314,8 @@ void CRtspSession::Handle_RtspSETUP()
     char Transport[255];
 
     // init RTP streamer transport type (UDP or TCP) and ports for UDP transport
-    m_Streamer->InitTransport(m_ClientRTPPort,m_ClientRTCPPort,m_TcpTransport);
+    m_Streamer->InitTransport(m_ClientRTPPort,m_ClientRTCPPort,m_TcpTransport);     // rtp_port is the port in the client to which image should 
+                                                                                    //go and rtcp_port is the port in the server that recevies the feedback
 
     // simulate SETUP server response
     if (m_TcpTransport)

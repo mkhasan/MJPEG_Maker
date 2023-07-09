@@ -16,6 +16,9 @@
 
 #include <assert.h>
 #include <new>
+#include <arpa/inet.h>
+#include <sys/socket.h>
+
 
 //sig_atomic_t CStreamer::streamStarted = 0;
 
@@ -72,14 +75,14 @@ void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height) {
 	const int MAX_PAYLOAD_SIZE = 1456;
 
 	int offset = 0;
-    /*
+    
 	for(int len = JpegLen; len > 0; len -= MAX_PAYLOAD_SIZE, offset += MAX_PAYLOAD_SIZE) {
 		SendRtpPacket(&Jpeg[offset], std::min(len, MAX_PAYLOAD_SIZE), width, height, len <= MAX_PAYLOAD_SIZE, offset);
 		//SendRtpPacket(&Jpeg[len], std::min(len, MAX_PAYLOAD_SIZE), width, height, len <= MAX_PAYLOAD_SIZE, offset);
 	}
-    */
+    
 
-    SendRtpPacket(Jpeg, JpegLen, width, height, true, 0);
+    
 }
 
 void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height, bool isLastPacket, unsigned int offset)
@@ -146,13 +149,11 @@ void CStreamer::SendRtpPacket(char * Jpeg, int JpegLen, int width, int height, b
 
 
     else {               // UDP - we send just the buffer by skipping the 4 byte RTP over RTSP header
-    	m_RtpSocket.send (&RtpBuf[4], RtpPacketSize, remoteAddr);
-    	printf("using udp at %d\n", m_RtpClientPort);
-
-
-
+         
+    	if (m_RtpSocket.send (&RtpBuf[4], RtpPacketSize, remoteAddr) < 0) {
+            cout << "Error in sending packet in udp" << endl;
+        }
     }
-    	//sendto(m_RtpSocket,&RtpBuf[4],RtpPacketSize,0,(SOCKADDR *) & RecvAddr,sizeof(RecvAddr));
 
 };
 
@@ -165,36 +166,13 @@ void CStreamer::InitTransport(u_short aRtpPort, u_short aRtcpPort, bool TCP)
     m_RtcpClientPort = aRtcpPort;
     m_TCPTransport   = TCP;
 
+    // assuming that we will not receive any feedback abount image queality
 
-    if (!m_TCPTransport)
-    {   // allocate port pairs for RTP/RTCP ports in UDP transport mode
-        for (u_short P = 6970; P < 0xFFFE ; P += 2)
-        {
-        	addr = ACE_INET_Addr(P);
-
-        	if (m_RtpSocket.open(addr) == 0)
-            {   // Rtp socket was bound successfully. Lets try to bind the consecutive Rtsp socket
-
-        		addr = ACE_INET_Addr(P+1);
-                //m_RtcpSocket = socket(AF_INET, SOCK_DGRAM, 0);
-                //Server.sin_port = htons(P + 1);
+    m_RtpSocket.open(ACE_Addr::sap_any);
 
 
-				if (m_RtcpSocket.open(addr))
-                {
-                    m_RtpServerPort  = P;
-                    m_RtcpServerPort = P+1;
-                    break; 
-                }
-                else
-                {
-                    m_RtpSocket.close();
-                    m_RtcpSocket.close();
-                };
-            }
-            else m_RtpSocket.close();
-        };
-    };
+
+ 
 };
 
 u_short CStreamer::GetRtpServerPort()

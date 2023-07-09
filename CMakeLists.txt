@@ -44,3 +44,5 @@ add_executable(${APP} ${SRC})
 
 #target_link_libraries (${APP} ACE avformat avcodec dl xcb-xfixes xcb-render xcb-shape xcb X11 z swresample swscale avutil avdevice m SDL pthread jpeg pthread)
 target_link_libraries (${APP} ACE m pthread jpeg pthread)
+
+add_executable(test src/test.cpp)

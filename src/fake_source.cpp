@@ -9,6 +9,7 @@
 #include "fake_source.h"
 #include "JPEGSamples.h"
 
+
 #include <pthread.h>
 #include <unistd.h>
 
@@ -97,9 +98,7 @@ void * FakeSource::stream_generator(void * arg) {
 
         }
 
-		
-
-	    usleep(40000);
+	     usleep(40000);
 
 	}
 
